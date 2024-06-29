@@ -1,0 +1,37 @@
+.contacts__container {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+.contacts__group {
+  display: flex;
+  gap: 16px;
+}
+
+.contacts__header {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 21.6px;
+}
+
+.contacts__phone {
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 21.6px;
+  color: #3689DB;
+
+}
+
+.contacts__socials {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+@media (max-width: 767px) {
+    .contacts__group {
+        display: none;
+    }
+}

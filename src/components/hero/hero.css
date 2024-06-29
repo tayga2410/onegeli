@@ -1,0 +1,152 @@
+.hero__container {
+  background-color: #e0f2f9;
+  min-height: 726px;
+  position: relative;
+}
+
+.hero__text-wrapper {
+  max-width: 600px;
+  padding: 170px 400px 0;
+}
+
+.hero__header {
+  font-family: Ubuntu;
+  max-width: 550px;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 48px;
+  margin: 0 0 20px;
+}
+
+.hero__description {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  margin: 0 0 28px;
+}
+
+.hero__button-group {
+  display: flex;
+  gap: 12px;
+}
+
+.hero__button {
+  display: flex;
+  align-items: center;
+  max-width: 256px;
+  max-height: 48px;
+  border-radius: 40px;
+  padding: 12px 24px;
+  border: none;
+  background-color: #ff5723;
+  color: white;
+  font-family: Mulish;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.hero__test-button {
+  max-width: 248px;
+  background-color: transparent;
+  color: #ff5723;
+  border: 2px solid #ff5723;
+}
+
+.hero__main-image {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+}
+
+.hero__decor-image {
+  position: absolute;
+  width: 100%;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+}
+
+@media (max-width: 1440px) {
+  .hero__text-wrapper {
+    max-width: 600px;
+  padding: 143px 160px 0;
+    
+  }
+}
+
+@media (max-width: 1199px) {
+  .hero__container {
+    min-height: 546px;
+  }
+
+  .hero__text-wrapper {
+    max-width: 500px;
+    padding: 53px 60px 0;
+  }
+
+  .hero__header {
+    font-size: 26px;
+    line-height: 31.2px;
+  }
+
+  .hero__button-group {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hero__decor-image {
+    max-height: 114px;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero__container {
+    min-height: 665px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .hero__button-group {
+   max-width: 256px;
+   width: 100%;
+   margin: 0 auto;
+  }
+
+  .hero__test-button {
+    display: none;
+  }
+
+  
+  .hero__text-wrapper {
+    padding: 42px 12px 0;
+  }
+
+  .hero__header {
+    font-size: 26px;
+    line-height: 31.2px;
+    text-align: center;
+  }
+
+  .hero__description {
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+  }
+
+
+  .hero__main-image {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+  }
+
+  .hero__decor-image {
+    max-height: 181px;
+    left: 0;
+    bottom: -50px;
+    display: none;
+  }
+}
