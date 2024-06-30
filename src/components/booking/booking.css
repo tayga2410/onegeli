@@ -1,0 +1,105 @@
+.booking__container {
+  padding: 60px 400px;
+  position: relative;
+}
+
+.booking__wrapper {
+  background-color: #f5f6f8;
+  padding: 32px 194px 60px 20px;
+  border-radius: 20px;
+  position: relative;
+}
+
+.booking__header {
+  font-family: Ubuntu;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 26.4px;
+  margin: 0 0 12px;
+}
+
+.booking__description {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  padding: 0 0 32px;
+}
+
+.booking__form {
+  display: flex;
+  gap: 12px;
+}
+
+.booking__input {
+  width: 294px;
+  height: 40px;
+  border-radius: 40px;
+  border: 1px solid #8f9bb352;
+  background: #ffffff;
+}
+
+.booking__input::placeholder {
+  padding: 4px 8px 6px 20px;
+  font-family: Mulish;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #8f9bb3;
+}
+
+.booking__button {
+  width: 294px;
+  height: 44px;
+  border: none;
+  border-radius: 40px;
+  background-color: #2573ff;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.booking__image {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.booking__ellipse {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 100%;
+}
+
+
+@media (max-width: 1800px) {
+  .booking__container {
+    padding: 60px 160px;
+  }
+}
+
+@media (max-width: 1439px) {
+  .booking__container {
+    padding: 60px;
+  }
+
+  .booking__wrapper {
+    padding: 32px 220px 32px 20px;
+  }
+  
+}
+
+@media (max-width: 767px) {
+  .booking__container {
+    padding: 40px 16px;
+  }
+
+  .booking__wrapper {
+    padding: 32px 32px 246px;
+  }
+
+  .booking__form {
+    flex-direction: column;
+  }
+}
