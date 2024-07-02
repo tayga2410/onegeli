@@ -9,7 +9,7 @@ import bookingEllipseMobile from '../../assets/booking-ellipse-mobile.svg'
 
 export default function Booking() {
   return (
-    <div className="booking__container">
+    <section className="booking">
       <div className="booking__wrapper">
       <h2 className="booking__header">
         Скачайте бесплатную электронную книгу 'Этапы развития ребёнка' от UNICEF
@@ -33,6 +33,6 @@ export default function Booking() {
       <source srcSet={bookingEllipseTablet} media="(max-width: 1439px)" />
         <img className="booking__ellipse" src={bookingEllipseDesktop} alt="" />
       </picture>
-    </div>
+    </section>
   );
 }

@@ -2,7 +2,7 @@ import "./about.css";
 
 export default function About() {
   return (
-    <div className="about__container">
+    <section className="about">
       <div className="about__wrapper">
         <iframe className="about__iframe"></iframe>
         <div className="about__text-wrapper">
@@ -18,6 +18,6 @@ export default function About() {
           </p>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

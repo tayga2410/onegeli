@@ -7,7 +7,7 @@ import ellipseMobile  from  '../../assets/hero-ellipse-mobile.svg'
 
 export default function Hero() {
   return (
-    <div className="hero__container">
+    <section className="hero">
       <div className="hero__text-wrapper">
         <h2 className="hero__header">Безопасность и развитие вашего ребенка</h2>
         <p className="hero__description">
@@ -29,6 +29,6 @@ export default function Hero() {
       <source srcSet={ellipseMobile} media="(max-width: 767px)" />
       <img className="hero__decor-image" src={ellipse} alt="" />
       </picture>
-    </div>
+    </section>
   );
 }

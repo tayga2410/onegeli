@@ -5,7 +5,7 @@ import whatsapp from '../../assets/whatsapp-icon.svg'
 
 export default function headerContacts() {
     return (
-        <div className='contacts__container'>
+        <section className='contacts'>
             <div className='contacts__group'>
                <img src={phone} alt="" />
                <div className='contacts__text-group'>
@@ -17,6 +17,6 @@ export default function headerContacts() {
                 <img src={whatsapp} alt="" />
                 <img src={instagram} alt="" />
             </div>
-        </div>
+        </section>
     )
 }

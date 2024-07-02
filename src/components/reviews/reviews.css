@@ -1,0 +1,155 @@
+.reviews {
+  background-color: #fff9e4;
+}
+
+.reviews__container {
+  padding: 60px 350px 80px;
+}
+
+.reviews__header {
+  font-family: Ubuntu;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 26.4px;
+  text-align: left;
+  padding-left: 60px;
+  margin: 0 0 20px;
+  text-transform: uppercase;
+}
+
+.reviews__description {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  padding-left: 60px;
+  margin: 0 0 20px;
+}
+
+.reviews__swiper-container {
+  position: relative;
+}
+
+.swiper {
+  width: 1120px;
+  position: static;
+}
+
+
+.reviews__card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background-color: #ffffff;
+  border: 2px solid #4f608214;
+  padding: 16px 12px 20px;
+  border-radius: 20px;
+  max-width: 332px;
+}
+
+.reviews__card-title {
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 24px;
+}
+
+.reviews__card-description {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.reviews__card-image {
+  width: 336px;
+  height: 200px;
+}
+.swiper-pagination {
+  position: relative;
+  margin: 20px auto 0;
+}
+
+.swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  border: 3px solid #edae49;
+  background-color: transparent;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #edae49;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #BE951A;
+  width: 19px;
+  height: 32px;
+}
+
+.swiper-button-next {
+  right: 8px;
+}
+
+.swiper-button-prev {
+  left: 8px;
+}
+
+@media (max-width: 1919px) {
+  .reviews__container {
+    padding: 60px 160px 80px;
+  }
+
+  .swiper-button-next {
+    right: -34px;
+  }
+  
+  .swiper-button-prev {
+    left: -34px;
+  }
+
+  .reviews__header,
+  .reviews__description  {
+    padding-left: unset;
+  }
+}
+
+@media (max-width: 1439px) {
+  .reviews__container {
+    padding: 60px 0 40px 60px;
+  }
+
+  .swiper {
+    width: unset;
+  }
+
+  .reviews__card {
+    max-width: 292px;
+  }
+
+  .reviews__card-image {
+    width: 296px;
+    height: 200px;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .reviews__container {
+    padding: 60px 0 40px 16px;
+  }
+
+  .reviews__header,
+  .reviews__description  {
+    padding-right: 16px;
+  }
+
+  .swiper-pagination-bullet {
+    width: 4px;
+    height: 4px;
+  }
+  
+
+}

@@ -4,10 +4,10 @@ import Contacts from '../contacts/HeaderContacts';
 
 export default function Header() {
     return (
-        <div className='header__container'>
+        <section className='header'>
             <h1 className='visually-hidden'>Профессиональное агенство по подготовке персонала по уходу за детьми</h1>
             <Nav />
             <Contacts />
-        </div>
+        </section>
     )
 }

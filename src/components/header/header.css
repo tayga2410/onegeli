@@ -1,4 +1,4 @@
-.header__container {
+.header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -7,20 +7,20 @@
 }
 
 @media (max-width: 1800px) {
-  .header__container {
+  .header {
     padding: 0 160px;
   }
 }
 
 @media (max-width: 1199px) {
-  .header__container {
+  .header {
     padding: 0 60px;
     border-bottom: none;
   }
 }
 
 @media (max-width: 767px) {
-  .header__container {
+  .header {
     padding: 0 16px;
   }
 }
