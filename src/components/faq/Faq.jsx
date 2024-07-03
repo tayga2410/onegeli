@@ -32,7 +32,7 @@ const AccordionItem = ({ question, answer, isOpen, onClick }) => {
 
 const AccordionSection = ({ header, items, openIndex, handleClick }) => (
   <div className="faq__accordion-section">
-    <h3 className="faq__accordion-section__header">{header}</h3>
+    <h3 className="faq__accordion-section-header">{header}</h3>
     {items.map((item, index) => (
       <AccordionItem
         key={index}

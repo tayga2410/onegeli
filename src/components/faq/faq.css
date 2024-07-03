@@ -3,15 +3,15 @@
 }
 
 .faq__header {
-    font-family: Ubuntu, sans-serif;
+  font-family: Ubuntu, sans-serif;
   font-size: 28px;
   font-weight: 700;
   line-height: 38px;
   text-align: center;
-  margin: 0 0 20px;
+  margin: 0 0 29px;
 }
 
-.faq__accordion-section__header {
+.faq__accordion-section-header {
   font-size: 20px;
   font-weight: 700;
   line-height: 24px;
@@ -42,9 +42,9 @@
 }
 
 .faq__accordion-content {
-    overflow: hidden;
-    transition: max-height 0.7s ease;
-  }
+  overflow: hidden;
+  transition: max-height 0.7s ease;
+}
 
 .faq__accordion-item::after {
   position: absolute;
@@ -81,4 +81,34 @@
 
 .faq__accordion-section {
   margin: 0 0 32px;
+}
+
+@media (max-width: 1919px) {
+  .faq {
+    padding: 20px 160px;
+  }
+}
+
+@media (max-width: 1439px) {
+  .faq {
+    padding: 20px 60px;
+  }
+
+  .faq__accordion-item {
+    gap: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .faq {
+    padding: 20px 16px;
+  }
+
+  .faq__accordion-section-header {
+    margin: 0 0 15px;
+  }
+
+  .faq__accordion-section {
+    gap: 0;
+  }
 }
