@@ -28,7 +28,7 @@
 }
 
 .about__header {
-  font-family: Ubuntu;
+  font-family: Ubuntu, sans-serif;
   font-size: 24px;
   font-weight: 700;
   line-height: 28.8px;

@@ -10,7 +10,7 @@
 }
 
 .hero__header {
-  font-family: Ubuntu;
+  font-family: Ubuntu, sans-serif;
   max-width: 550px;
   font-size: 40px;
   font-weight: 700;

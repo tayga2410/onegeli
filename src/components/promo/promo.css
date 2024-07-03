@@ -11,7 +11,7 @@
 }
 
 .promo__header {
-  font-family: Ubuntu;
+  font-family: Ubuntu, sans-serif;
   font-size: 22px;
   font-weight: 700;
   line-height: 26.4px;

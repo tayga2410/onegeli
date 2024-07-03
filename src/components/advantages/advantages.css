@@ -19,7 +19,7 @@
 }
 
 .advantages__header {
-  font-family: Ubuntu;
+  font-family: Ubuntu, sans-serif;
   font-size: 26px;
   font-weight: 700;
   line-height: 31.2px;
