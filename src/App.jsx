@@ -8,6 +8,7 @@ import Values from './components/values/Values'
 import Promo from './components/promo/Promo'
 import Services from './components/services/Services'
 import Reviews from './components/reviews/Reviews'
+import Faq from './components/faq/Faq'
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
     <Promo />
     <Services />
     <Reviews />
+    <Faq />
    </div>
   )
 }
