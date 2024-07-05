@@ -57,6 +57,17 @@
   font-size: 20px;
   font-weight: 700;
   line-height: 24px;
+  cursor: pointer;
+}
+
+.booking__button:hover {
+  background-color: #1A62E4;
+
+}
+
+.booking__button:focus,
+.booking__button:active {
+  background-color: #044FD6;
 }
 
 .booking__image {

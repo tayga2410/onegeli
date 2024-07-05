@@ -41,20 +41,19 @@
   line-height: 24px;
 }
 
-@media (max-width: 1439px) {
+@media (max-width: 1019px) {
   .about__wrapper {
     max-width: 748px;
     padding: 10px;
     min-height: 232px;
+    flex-direction: column;
   }
   .about__iframe {
-    height: 225px;
-    width: 293px;
+    width: 650px;
+    height: 280px;
   }
 
   .about__description {
-    font-size: 14px;
-    line-height: 19px;
   }
 }
 

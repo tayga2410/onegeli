@@ -1,5 +1,13 @@
 .reviews {
   background-color: #fff9e4;
+  position: relative;
+}
+
+.reviews__ellipse {
+  position: absolute;
+  left: 0;
+  top: -1px;
+  width: 100%;
 }
 
 .reviews__container {

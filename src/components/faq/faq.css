@@ -32,6 +32,7 @@
   padding: 0 0 0 13px;
   flex-shrink: 0;
   align-items: center;
+  cursor: pointer;
 }
 
 .faq__accordion-item {

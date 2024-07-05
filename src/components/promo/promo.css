@@ -40,6 +40,17 @@
   font-size: 20px;
   font-weight: 700;
   line-height: 24px;
+  cursor: pointer;
+}
+
+.promo__button:hover {
+  background-color: #1A62E4;
+
+}
+
+.promo__button:focus,
+.promo__button:active {
+  background-color: #044FD6;
 }
 
 .promo__image {

@@ -15,19 +15,25 @@ import orangeEllipseRightDesktop from "../../assets/advantages-ellipse-orange-ri
 import orangeEllipseLeftTablet from "../../assets/advantages-ellipse-orange-left-tablet.png";
 import orangeEllipseRightTablet from "../../assets/advantages-ellipse-orange-right-tablet.png";
 import orangeEllipseRightMobile from "../../assets/advantages-ellipse-orange-right-mobile.png";
+import orangeEllipseLeftSemitablet from "../../assets/advantages-ellipse-orange-left-semitablet.png";
+import orangeEllipseRightSemitablet from "../../assets/advantages-ellipse-orange-right-semitablet.png";
 import greenEllipseLeftDesktop from "../../assets/advantages-ellipse-green-left-desktop.png";
+import greenEllipseLeftSemitablet from "../../assets/advantages-ellipse-green-left-semitablet.png";
 import greenEllipseLeftMobile from "../../assets/advantages-ellipse-green-left-mobile.png";
 import medalMobile from "../../assets/advantages-medal-mobile.png";
 import childDesktop from "../../assets/advantages-child-image-desktop.png";
 import childTablet from "../../assets/advantages-child-image-tablet.png";
+import childSemitablet from "../../assets/advantages-child-image-semitablet.png";
 import childMobile from "../../assets/advantages-child-image-mobile.png";
 import greenDecorDesktop from "../../assets/advantages-green-decor-desktop.png";
 import greenDecorTablet from "../../assets/advantages-green-decor-tablet.png";
 import greenDecorMobile from "../../assets/advantages-green-decor-mobile.png";
 import womanImageDesktop from "../../assets/advantages-woman-image-desktop.png";
 import womanImageTablet from "../../assets/advantages-woman-image-tablet.png";
+import womanImageSemitablet from "../../assets/advantages-woman-image-semitablet.png";
 import womanImageMobile from "../../assets/advantages-woman-image-mobile.png";
 import blueEllipseRightDesktop from "../../assets/advantages-ellipse-blue-right-desktop.png";
+import blueEllipseRightSemitablet from "../../assets/advantages-ellipse-blue-right-semitablet.png";
 import blueEllipseRightMobile from "../../assets/advantages-ellipse-blue-right-mobile.png";
 import blueVisualFirst from '../../assets/advantages-blue-visual-1.png';
 import blueVisualSecond from '../../assets/advantages-blue-visual-2.png';
@@ -78,6 +84,10 @@ export default function Advantages() {
             </li>
           </ul>
           <picture>
+          <source
+              srcSet={orangeEllipseLeftSemitablet}
+              media="(max-width: 1019px)"
+            />
             <source
               srcSet={orangeEllipseLeftTablet}
               media="(max-width: 1439px)"
@@ -92,6 +102,10 @@ export default function Advantages() {
             <source
               srcSet={orangeEllipseRightMobile}
               media="(max-width: 767px)"
+            />
+            <source
+              srcSet={orangeEllipseRightSemitablet}
+              media="(max-width: 1019px)"
             />
             <source
               srcSet={orangeEllipseRightTablet}
@@ -116,7 +130,7 @@ export default function Advantages() {
             <li className="advantages__sub-item advantages__sub-item--stretched">
               <img className="advantages__icon" src={greenIconOne} alt="" />
               <p className="advantages__title advantages__title--green">
-                Персонализированные планы развития
+                Персонализирован<br className="advantages__word-breaker" />ные планы развития
               </p>
             </li>
             <li className="advantages__sub-item advantages__sub-item--stretched">
@@ -134,6 +148,7 @@ export default function Advantages() {
           </ul>
           <picture>
             <source srcSet={childMobile} media="(max-width: 767px)" />
+            <source srcSet={childSemitablet} media="(max-width: 1019px)" />
             <source srcSet={childTablet} media="(max-width: 1439px)" />
             <img
               className="advantages__child-image"
@@ -146,6 +161,11 @@ export default function Advantages() {
               srcSet={greenEllipseLeftMobile}
               media="(max-width: 767px)"
             />
+            <source
+              srcSet={greenEllipseLeftSemitablet}
+              media="(max-width: 1019px)"
+            />
+
             <img
               className="advantages__green-ellipse-left"
               src={greenEllipseLeftDesktop}
@@ -153,7 +173,7 @@ export default function Advantages() {
             />
           </picture>
           <picture>
-            <source srcSet={greenDecorMobile} media="(max-width: 767px)" />
+            <source srcSet={greenDecorMobile} media="(max-width: 1019px)" />
             <source srcSet={greenDecorTablet} media="(max-width: 1439px)" />
             <img
               className="advantages__green-decor"
@@ -192,6 +212,7 @@ export default function Advantages() {
           </ul>
           <picture>
             <source srcSet={womanImageMobile} media="(max-width: 767px)" />
+            <source srcSet={womanImageSemitablet} media="(max-width: 1019px)" />
             <source srcSet={womanImageTablet} media="(max-width: 1439px)" />
             <img
               className="advantages__woman-image"
@@ -203,6 +224,10 @@ export default function Advantages() {
             <source
               srcSet={blueEllipseRightMobile}
               media="(max-width: 767px)"
+            />
+              <source
+              srcSet={blueEllipseRightSemitablet}
+              media="(max-width: 1019px)"
             />
             <img
               className="advantages__blue-ellipse-right"

@@ -34,7 +34,7 @@
 }
 
 .services__item--opened {
-  max-height: unset; 
+  max-height: unset;
 }
 
 .services__title {
@@ -124,6 +124,17 @@
   background-color: #2573ff;
   color: #ffffff;
   margin: 0 0 20px;
+  cursor: pointer;
+
+}
+
+.services__button:hover {
+  background-color: #1a62e4;
+}
+
+.services__button:focus,
+.services__button:active {
+  background-color: #044fd6;
 }
 
 .services__button--transparent {
@@ -162,7 +173,6 @@
   }
 }
 
-
 @media (max-width: 767px) {
   .services__list {
     padding: 0 16px 40px 16px;
@@ -179,5 +189,4 @@
   .services__description {
     min-height: 110px;
   }
-
 }

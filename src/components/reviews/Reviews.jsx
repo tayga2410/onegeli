@@ -8,10 +8,28 @@ import "swiper/css/navigation";
 import "./reviews.css";
 
 import tempImg from "../../assets/reviews-temp.png";
+import ellipseDesktop from '../../assets/reviews-ellipse-desktop.png';
+import ellipseTablet from '../../assets/reviews-ellipse-desktop.png';
+import ellipseMobile from '../../assets/reviews-ellipse-desktop.png';
 
 export default function Reviews() {
   return (
     <section className="reviews">
+        <picture>
+          <source
+              srcSet={ellipseMobile}
+              media="(max-width: 767px)"
+            />
+            <source
+              srcSet={ellipseTablet}
+              media="(max-width: 1439px)"
+            />
+            <img
+              className="reviews__ellipse"
+              src={ellipseTablet}
+              alt=""
+            />
+          </picture>
       <div className="reviews__container">
         <h2 className="reviews__header">Отзывы наших клиентов</h2>
         <p className="reviews__description">
