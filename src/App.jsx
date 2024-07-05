@@ -1,32 +1,25 @@
 import './App.css'
-import About from './components/about/About'
-import Advantages from './components/advantages/Advantages'
-import Booking from './components/booking/Booking'
-import Header from './components/header/Header'
-import Hero from './components/hero/Hero'
-import Values from './components/values/Values'
-import Promo from './components/promo/Promo'
-import Services from './components/services/Services'
-import Reviews from './components/reviews/Reviews'
-import Faq from './components/faq/Faq'
-import Footer from './components/footer/footer'
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import Header from './components/header/Header';
+import Footer from './components/footer/footer';
+import MainPage from './MainPage';
+import TestPage from './TestPage';
+
 
 function App() {
 
   return (
+    <Router>
    <div className='container'>
     <Header />
-    <Hero />
-    <About />
-    <Values />
-    <Booking />
-    <Advantages />
-    <Promo />
-    <Services />
-    <Reviews />
-    <Faq />
-    <Footer />
+    <Routes>
+    <Route path="/" element={<MainPage />} />
+    <Route path="/test" element={<TestPage />} />
+    </Routes>
+   <Footer />
    </div>
+   </Router>
   )
 }
 

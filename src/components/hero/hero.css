@@ -98,7 +98,7 @@
 }
 
 .hero__input {
-  width: 560px;
+  max-width: 560px;
   height: 52px;
   padding: 4px 4px 4px 20px;
   border-radius: 20px;
@@ -127,12 +127,24 @@
   font-weight: 700;
   line-height: 24px;
   color: #47485a;
+  cursor: pointer;
 }
 
 .hero__form-button {
   width: 100%;
   max-width: unset;
   justify-content: center;
+}
+
+
+.hero__form-message,
+.hero__form-message-error  {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.hero__form-message-error {
+  color: #ff0000;
 }
 
 @media (max-width: 1800px) {
@@ -186,6 +198,10 @@
     margin: 0 auto;
   }
 
+  .hero__form-button-group {
+    max-width: unset;
+  }
+
   .hero__test-button {
     display: none;
   }
@@ -220,3 +236,4 @@
     display: none;
   }
 }
+
