@@ -1,5 +1,5 @@
 import "./values.css";
-import ellipseTemporary from '../../assets/ellipse-temporary.svg'
+import ellipseTemporary from '../../assets/values/ellipse-temporary.svg'
 
 export default function ValuesTeaching() {
   return (

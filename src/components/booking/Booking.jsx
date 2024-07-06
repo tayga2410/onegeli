@@ -1,10 +1,10 @@
 import "./booking.css";
-import bookingDesktop from '../../assets/booking-image-desktop.png'
-import bookingTablet from '../../assets/booking-image-tablet.png'
-import bookingMobile from '../../assets/booking-image-mobile.png'
-import bookingEllipseDesktop from '../../assets/booking-ellipse-desktop.svg'
-import bookingEllipseTablet from '../../assets/booking-ellipse-tablet.svg'
-import bookingEllipseMobile from '../../assets/booking-ellipse-mobile.svg'
+import bookingDesktop from '../../assets/booking/booking-image-desktop.png'
+import bookingTablet from '../../assets/booking/booking-image-tablet.png'
+import bookingMobile from '../../assets/booking/booking-image-mobile.png'
+import bookingEllipseDesktop from '../../assets/booking/booking-ellipse-desktop.svg'
+import bookingEllipseTablet from '../../assets/booking/booking-ellipse-tablet.svg'
+import bookingEllipseMobile from '../../assets/booking/booking-ellipse-mobile.svg'
 
 
 export default function Booking() {

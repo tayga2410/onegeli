@@ -1,7 +1,7 @@
 import './headerContacts.css'
-import phone from '../../assets/phone-icon.svg'
-import instagram from '../../assets/instagram-icon.svg'
-import whatsapp from '../../assets/whatsapp-icon.svg'
+import phone from '../../assets/header/phone-icon.svg'
+import instagram from '../../assets/header/instagram-icon.svg'
+import whatsapp from '../../assets/header/whatsapp-icon.svg'
 
 export default function headerContacts() {
     return (

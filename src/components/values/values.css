@@ -6,7 +6,7 @@
 .values__ellipse {
   position: absolute;
   width: 100%;
-  top: 0;
+  top: -1px;
   left: 0;
 }
 

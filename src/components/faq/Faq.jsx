@@ -2,8 +2,8 @@
 import './faq.css';
 import data from './data.js';
 import { useState, useRef, useEffect } from 'react';
-import plusIcon from '../../assets/faq-plus-icon.svg';
-import minusIcon from '../../assets/faq-minus-icon.svg';
+import plusIcon from '../../assets/faq/faq-plus-icon.svg';
+import minusIcon from '../../assets/faq/faq-minus-icon.svg';
 
 const AccordionItem = ({ question, answer, isOpen, onClick }) => {
   const contentRef = useRef(null);

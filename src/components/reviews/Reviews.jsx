@@ -7,10 +7,10 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "./reviews.css";
 
-import tempImg from "../../assets/reviews-temp.png";
-import ellipseDesktop from '../../assets/reviews-ellipse-desktop.png';
-import ellipseTablet from '../../assets/reviews-ellipse-desktop.png';
-import ellipseMobile from '../../assets/reviews-ellipse-desktop.png';
+import tempImg from "../../assets/reviews/reviews-temp.png";
+import ellipseDesktop from '../../assets/reviews/reviews-ellipse-desktop.png';
+import ellipseTablet from '../../assets/reviews/reviews-ellipse-desktop.png';
+import ellipseMobile from '../../assets/reviews/reviews-ellipse-desktop.png';
 
 export default function Reviews() {
   return (
@@ -26,7 +26,7 @@ export default function Reviews() {
             />
             <img
               className="reviews__ellipse"
-              src={ellipseTablet}
+              src={ellipseDesktop}
               alt=""
             />
           </picture>

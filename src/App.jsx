@@ -5,6 +5,8 @@ import Header from './components/header/Header';
 import Footer from './components/footer/footer';
 import MainPage from './MainPage';
 import TestPage from './TestPage';
+import HirePage from './HirePage';
+import QuizPage from './components/quiz/QuizPage';
 
 
 function App() {
@@ -16,6 +18,8 @@ function App() {
     <Routes>
     <Route path="/" element={<MainPage />} />
     <Route path="/test" element={<TestPage />} />
+    <Route path="/quiz" element={<QuizPage />} />
+    <Route path="/hire" element={<HirePage />} />
     </Routes>
    <Footer />
    </div>

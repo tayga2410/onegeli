@@ -18,6 +18,15 @@
   margin: 0 0 20px;
 }
 
+.hero__form-header {
+  font-family: Ubuntu, sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 31.2px;
+  text-align: left;
+  margin: 0 0 40px;
+}
+
 .hero__description {
   font-size: 20px;
   font-weight: 600;
@@ -45,6 +54,7 @@
   font-weight: 700;
   line-height: 24px;
   cursor: pointer;
+  z-index: 5;
 }
 
 .hero__button:hover {
@@ -87,7 +97,7 @@
   position: absolute;
   width: 100%;
   right: 0;
-  bottom: 0;
+  bottom: -1px;
   z-index: 3;
 }
 
@@ -97,7 +107,9 @@
   gap: 20px;
 }
 
-.hero__input {
+.hero__input,
+.hero__input--textarea {
+  font-family: Mulish, sans-serif;
   max-width: 560px;
   height: 52px;
   padding: 4px 4px 4px 20px;
@@ -106,9 +118,16 @@
   font-size: 20px;
   font-weight: 500;
   line-height: 24px;
+  display: flex;
 }
 
-.hero__input::placeholder {
+.hero__input--textarea {
+  min-height: 122px;
+  margin: 0 0 40px;
+}
+
+.hero__input::placeholder,
+.hero__input--textarea::placeholder {
   font-size: 20px;
   font-weight: 500;
   line-height: 24px;
@@ -136,9 +155,8 @@
   justify-content: center;
 }
 
-
 .hero__form-message,
-.hero__form-message-error  {
+.hero__form-message-error {
   text-align: center;
   margin-top: 30px;
 }
@@ -236,4 +254,3 @@
     display: none;
   }
 }
-

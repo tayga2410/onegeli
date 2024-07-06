@@ -1,5 +1,5 @@
 import "./services.css";
-import checkbox from "../../assets/services-checkbox.svg";
+import checkbox from "../../assets/services/services-checkbox.svg";
 import { useState } from "react";
 
 export default function Services() {

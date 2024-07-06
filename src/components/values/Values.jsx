@@ -1,7 +1,7 @@
 import "./values.css";
 import ValuesDescription from "./ValuesDescription";
 import ValuesTeaching from "./ValuesTeaching";
-import valuesEllipse from '../../assets/values-ellipse.svg'
+import valuesEllipse from '../../assets/values/values-ellipse.svg'
 
 export default function Values() {
     return (

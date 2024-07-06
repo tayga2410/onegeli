@@ -1,8 +1,8 @@
 import "./values.css";
-import heartIcon from "../../assets/values-icon-1.svg";
-import childIcon from "../../assets/values-icon-2.svg";
-import horseIcon from "../../assets/values-icon-3.svg";
-import instagram from "../../assets/values-icon-button.svg";
+import heartIcon from "../../assets/values/values-icon-1.svg";
+import childIcon from "../../assets/values/values-icon-2.svg";
+import horseIcon from "../../assets/values/values-icon-3.svg";
+import instagram from "../../assets/values/values-icon-button.svg";
 
 export default function ValuesDescription() {
   return (

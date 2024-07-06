@@ -1,0 +1,141 @@
+.test-hero {
+  background-color: #e0f2f9;
+  min-height: 612px;
+  position: relative;
+}
+
+.test-hero__text-wrapper {
+  max-width: 550px;
+  margin: 0 auto;
+  padding: 68px 0 188px;
+  text-align: center;
+}
+
+.test-hero__header {
+  font-family: Ubuntu, sans-serif;
+  max-width: 550px;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 48px;
+  margin: 0 0 20px;
+}
+
+.test-hero__description {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  margin: 0 0 28px;
+}
+
+.test-hero__image {
+  position: absolute;
+  left: 0;
+  bottom: 28px;
+  z-index: 2;
+}
+
+.test-hero__decor-image {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 3;
+}
+
+.test-hero__stars-image {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.test-hero__button-group {
+  display: flex;
+  gap: 12px;
+  flex-direction: column;
+}
+
+.test-hero__button {
+  display: flex;
+  align-items: center;
+  max-width: 256px;
+  max-height: 48px;
+  border-radius: 40px;
+  padding: 12px 24px;
+  border: none;
+  background-color: #ff5723;
+  color: white;
+  font-family: Mulish;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  cursor: pointer;
+}
+
+.test-hero__test-start-button,
+.test-hero__test-cancel-button {
+  max-width: unset;
+  justify-content: center;
+}
+
+.test-hero__button:hover {
+  background-color: #e64412;
+}
+
+.test-hero__button:focus,
+.test-hero__button:active {
+  background-color: #d73300;
+}
+
+.test-hero__test-button {
+  max-width: 248px;
+  background-color: transparent;
+  color: #ff5723;
+  border: 2px solid #ff5723;
+}
+
+.test-hero__test-button:hover {
+  background-color: transparent;
+  color: #e64412;
+  border: 2px solid #e64412;
+}
+
+.test-hero__test-button:focus,
+.test-hero__test-button:active {
+  background-color: transparent;
+  color: #d73300;
+  border: 2px solid #d73300;
+}
+
+
+@media (max-width: 1020px) {
+  .test-hero__image {
+    left: -101px;
+    bottom: 0px;
+  }
+ 
+}
+
+
+@media (max-width: 767px) {
+
+  .test-hero__text-wrapper {
+    padding: 40px 12px 354px;
+    text-align: center;
+  }
+  .test-hero__image {
+    left: unset;
+    bottom: 0px;
+    z-index: 5;
+  }
+
+  .test-hero__stars-image {
+    right: unset;
+    left: 0;
+  }
+
+  .test-hero__test-cancel-button {
+    display: block;
+  }
+ 
+}

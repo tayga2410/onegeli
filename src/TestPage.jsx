@@ -1,9 +1,9 @@
 import './App.css'
-import Test from './components/test/Test'
+import HeroTest from './components/test/HeroTest';
 
 function TestPage() {
     return (
-        <Test />
+        <HeroTest />
     )
 }
 

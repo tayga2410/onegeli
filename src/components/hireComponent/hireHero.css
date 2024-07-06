@@ -1,0 +1,82 @@
+.hire-hero {
+  padding: 60px 660px 0;
+  text-align: center;
+  position: relative;
+}
+
+.hire-hero__wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.hire-hero__header {
+  text-align: center;
+}
+
+.hire-hero__form {
+  margin: 0 auto;
+}
+
+
+.hire-hero__input {
+  max-width: 600px;
+}
+
+.hire-hero__image {
+  position: absolute;
+  left: 0;
+  bottom: 28px;
+  z-index: 2;
+}
+
+.hire-hero__decor-image {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 3;
+}
+
+.hire-hero__stars-image {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+
+@media (max-width: 1919px) {
+  .hire-hero {
+    padding: 40px 160px;
+  }
+}
+
+
+@media (max-width: 1439px) {
+  .hire-hero {
+    padding: 40px 60px 21px;
+  }
+  
+  .hire-hero__form {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 1019px) {
+  .hire-hero {
+   padding-bottom: 178px;
+  }
+  .hire-hero__image {
+    left: -112px;
+  }
+}
+
+@media (max-width: 767px) {
+  .hire-hero {
+    padding: 40px 12px;
+  }
+
+  .hire-hero__image {
+    bottom: 0;
+  }
+}

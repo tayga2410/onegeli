@@ -1,10 +1,12 @@
 import "./footer.css";
-import footerLogo from "../../assets/footer-logo.svg";
-import instagramLogo from "../../assets/instagram-logo.svg";
-import twitterLogo from "../../assets/twitter-logo.svg";
-import facebookLogo from "../../assets/facebook-logo.svg";
+import footerLogo from "../../assets/footer/footer-logo.svg";
+import instagramLogo from "../../assets/footer/instagram-logo.svg";
+import twitterLogo from "../../assets/footer/twitter-logo.svg";
+import facebookLogo from "../../assets/footer/facebook-logo.svg";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
+
   return (
     <footer className="footer">
       <div className="footer__text-group">
@@ -26,9 +28,9 @@ export default function Footer() {
         <li className="footer__list-item">Пресса о нас</li>
       </ul>
       <ul className="footer__list">
-        <li className="footer__list-item">Сотрудничество</li>
-        <li className="footer__list-item">Вакансии</li>
-        <li className="footer__list-item">Условия найма</li>
+        <li className="footer__list-item"><Link className="footer__link" to="/hire"> Сотрудничество</Link></li>
+        <li className="footer__list-item"><Link className="footer__link" to="/hire">Вакансии</Link></li>
+        <li className="footer__list-item"><Link className="footer__link" to="/hire"> Условия найма</Link></li>
       </ul>
       <ul className="footer__list">
         <li className="footer__list-item">Контакты</li>

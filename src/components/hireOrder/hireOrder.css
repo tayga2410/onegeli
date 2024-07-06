@@ -1,0 +1,84 @@
+.hire-order {
+  padding: 60px 400px;
+  position: relative;
+}
+
+.hire-order__header {
+  font-family: Ubuntu;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 31.2px;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0 0 20px;
+}
+
+.hire-hero__decor-image {
+  bottom: -1px;
+}
+
+.hire-order__ellipse {
+  position: absolute;
+  left: 0;
+  top: -1px;
+  width: 100%;
+}
+
+.hire-order__list {
+  display: flex;
+}
+
+.hire-order__item {
+  display: flex;
+  padding: 0 20px 0 65px;
+  width: 280px;
+  height: 262px;
+  position: relative;
+}
+
+.hire-order__polygon {
+  position: absolute;
+  right: -34px;
+  top: 0;
+  z-index: 2;
+}
+
+.hire-order__item-wrapper {
+  max-width: 188px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-self: center;
+}
+
+.hire-order__item--first-item {
+  background: #58c5ed;
+  border-radius: 20px 0 0 20px;
+}
+.hire-order__item--second-item {
+  background: #86d2ed;
+}
+
+.hire-order__item--third-item {
+  background: #bee5f3;
+}
+
+.hire-order__item--fourth-item {
+  background: #e0f2f9;
+  border-radius: 0 20px 20px 0;
+}
+
+.hire-order__item-title {
+  font-family: Ubuntu;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28.8px;
+  text-align: left;
+}
+
+.hire-order__item-description {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: left;
+}
