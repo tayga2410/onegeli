@@ -3,12 +3,13 @@
 }
 
 .faq__header {
-  font-family: Ubuntu, sans-serif;
+  font-family: Ubuntu;
   font-size: 28px;
   font-weight: 700;
   line-height: 38px;
   text-align: center;
   margin: 0 0 29px;
+  text-transform: uppercase;
 }
 
 .faq__accordion-section-header {

@@ -1,16 +1,38 @@
-import './nav.css';
-import logo from '../../assets/nav/logo-main.png';
+import "./nav.css";
+import logo from "../../assets/nav/logo-main.png";
+import LanguageSelector from "../languageSelector/LanguageSelector";
+import { useTranslation } from "react-i18next";
 
-export default function Nav () {
-    return (
-       <section className='nav__container'>
-        <img className='nav__logo' src={logo} alt="" />
-        <div className='nav__language-selector'>RU</div> 
-        <ul className='nav__list'>
-            <li className='nav__item'><a className="nav__link" href="">Особенности</a></li>
-            <li className='nav__item'><a className="nav__link" href="">Планы</a></li>
-            <li className='nav__item'><a className="nav__link" href="">Отзывы</a></li>
-        </ul>
-       </section> 
-    )
+export default function Nav() {
+  const { t } = useTranslation();
+
+
+  return (
+    <section className="nav__container">
+      <img className="nav__logo" src={logo} alt="" />
+      <LanguageSelector />
+      <ul className="nav__list">
+        <li className="nav__item">
+          <a className="nav__link" href="#header">
+            {t("Главная")}
+          </a>
+        </li>
+        <li className="nav__item">
+          <a className="nav__link" href="">
+          {t("Особенности")}
+          </a>
+        </li>
+        <li className="nav__item">
+          <a className="nav__link" href="">
+          {t("Планы")}
+          </a>
+        </li>
+        <li className="nav__item">
+          <a className="nav__link" href="">
+          {t("Отзывы")}
+          </a>
+        </li>
+      </ul>
+    </section>
+  );
 }

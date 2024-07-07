@@ -12,7 +12,7 @@
 }
 
 .test-hero__header {
-  font-family: Ubuntu, sans-serif;
+  font-family: Ubuntu;
   max-width: 550px;
   font-size: 40px;
   font-weight: 700;

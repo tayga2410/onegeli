@@ -1,35 +1,47 @@
 import "./services.css";
 import checkbox from "../../assets/services/services-checkbox.svg";
 import { useState } from "react";
+import { usePopup } from "../hero/PopupContext";
+import { useTranslation } from "react-i18next";
 
 export default function Services() {
+  const { t } = useTranslation();
+
   const [openIndex, setOpenIndex] = useState(null);
 
   const handleToggleDetails = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  const { togglePopup } = usePopup();
+
   return (
     <section className="services">
-      <h2 className="services__header">Наши услуги</h2>
+      <h2 className="services__header">{t("Наши услуги")}</h2>
       <ul className="services__list">
         <li
           className={`services__item ${
             openIndex === 0 ? "services__item--opened" : ""
           }`}
         >
-          <h3 className="services__title">Пакет "Младенец" (0-1 год)</h3>
-          <span className="services__info">Кому подходит:</span>
+          <div className="services__title-wrapper">
+            <h3 className="services__title">
+              {t("Пакет «Младенец» (0-1 год)")}
+            </h3>
+            <span className="services__price-tag">{t("от 400 000 тенге")}</span>
+          </div>
+          <span className="services__info">{t("Кому подходит:")}</span>
           <p className="services__description">
-            Этот пакет подходит для семей, которым требуется специализированная
-            поддержка в уходе за младенцами в первые месяцы жизни.
+            {t(
+              "Этот пакет подходит для семей, которым требуется специализированная поддержка в уходе за младенцами в первые месяцы жизни."
+            )}
           </p>
           {openIndex !== 0 && (
             <button
               className="services__button"
               onClick={() => handleToggleDetails(0)}
             >
-              Подробнее
+              {t("Подробнее")}
             </button>
           )}
           <div
@@ -39,56 +51,92 @@ export default function Services() {
           >
             {openIndex === 0 && (
               <div className="services__details-content">
-                <ul className="services__sub-list">
-                  <span className="services__info">Включает:</span>
-                  <li className="services__sub-item">
-                    <img src={checkbox} alt="" />
-                    Ежедневный уход и наблюдение за детьми
-                  </li>
-                  <li className="services__sub-item">
-                    <img src={checkbox} alt="" />
-                    Образовательные и развивающие занятия
-                  </li>
-                  <li className="services__sub-item">
-                    <img src={checkbox} alt="" />
-                    Основные медицинские знания (первая помощь, базовые
-                    медицинские наблюдения)
-                  </li>
-                  <li className="services__sub-item">
-                    <img src={checkbox} alt="" />
-                    Ежедневные отчеты для родителей
-                  </li>
-                </ul>
-                <ul className="services__sub-list">
-                  <span className="services__info">Преимущества:</span>
-                  <li className="services__sub-item">
-                    <img src={checkbox} alt="" />
-                    Доступная стоимость
-                  </li>
-                  <li className="services__sub-item">
-                    <img src={checkbox} alt="" />
-                    Профессиональные и заботливые специалисты
-                  </li>
-                  <li className="services__sub-item">
-                    <img src={checkbox} alt="" />
-                    Основной набор услуг для безопасности и развития ребенка
-                  </li>
-                </ul>
-                <div className="services__price-wrapper">
-                  <span className="services__price-text">Цена:</span>
-                  <span className="services__price-tag">от 400 000 тенге</span>
+                <div className="services__list-wrapper">
+                  <ul className="services__sub-list">
+                    <span className="services__info">{t("Включает:")}</span>
+                    <li className="services__sub-item">
+                      <img
+                        className="services__checkbox"
+                        src={checkbox}
+                        alt=""
+                      />{" "}
+                      {t(
+                        "Полный уход за младенцами: купание, кормление, смена подгузников"
+                      )}
+                    </li>
+                    <li className="services__sub-item">
+                      <img src={checkbox} alt="" />
+                      {t(
+                        "Мониторинг здоровья и наблюдение за физическим развитием"
+                      )}
+                    </li>
+                    <li className="services__sub-item">
+                      <img
+                        className="services__checkbox"
+                        src={checkbox}
+                        alt=""
+                      />
+                      {t(
+                        "Основные медицинские знания (первая помощь, базовые медицинские наблюдения)"
+                      )}
+                    </li>
+                    <li className="services__sub-item">
+                      <img
+                        className="services__checkbox"
+                        src={checkbox}
+                        alt=""
+                      />
+                      {t("Консультации по грудному вскармливанию")}
+                    </li>
+                    <li className="services__sub-item">
+                      <img
+                        className="services__checkbox"
+                        src={checkbox}
+                        alt=""
+                      />
+                      {t("Ежедневные отчеты для родителей")}
+                    </li>
+                  </ul>
+                  <ul className="services__sub-list">
+                    <span className="services__info">{t("Преимущества:")}</span>
+                    <li className="services__sub-item">
+                      <img
+                        className="services__checkbox"
+                        src={checkbox}
+                        alt=""
+                      />
+                      {t("Специалисты с медицинским образованием")}
+                    </li>
+                    <li className="services__sub-item">
+                      <img
+                        className="services__checkbox"
+                        src={checkbox}
+                        alt=""
+                      />
+                      {t("Безопасность и комфорт для младенца")}
+                    </li>
+                    <li className="services__sub-item">
+                      <img src={checkbox} alt="" />
+                      {t("Поддержка в установлении режима сна и питания")}
+                    </li>
+                  </ul>
                 </div>
                 <p className="services__sub-description">
-                  Запишитесь на консультацию, чтобы узнать, подходит ли вам этот
-                  план, и подробный разбор вопросов
+                  {t(
+                    "Запишитесь на консультацию, чтобы узнать, подходит ли вам этот план, и подробный разбор вопросов"
+                  )}
                 </p>
-                <button className="services__button">Записаться</button>
-                <button
-                  className="services__button services__button--transparent"
-                  onClick={() => handleToggleDetails(0)}
-                >
-                  Свернуть
-                </button>
+                <div className="services__button-group">
+                  <button className="services__button" onClick={togglePopup}>
+                    {t("Записаться")}
+                  </button>
+                  <button
+                    className="services__button services__button--transparent"
+                    onClick={() => handleToggleDetails(0)}
+                  >
+                    {t("Свернуть")}
+                  </button>
+                </div>
               </div>
             )}
           </div>
@@ -99,18 +147,24 @@ export default function Services() {
             openIndex === 1 ? "services__item--opened" : ""
           }`}
         >
-          <h3 className="services__title">Пакет "Малыш" (1-3 года)</h3>
-          <span className="services__info">Кому подходит:</span>
+          <div className="services__title-wrapper">
+            <h3 className="services__title">{t("Пакет «Малыш» (1-3 года)")}</h3>
+            <span className="services__price-tag">
+              {t("от 400 000 тенге")}{" "}
+            </span>
+          </div>
+          <span className="services__info">{t("Кому подходит:")} </span>
           <p className="services__description">
-            Этот пакет предназначен для семей, которые хотят обеспечить своим
-            детям уход и развитие на этапе раннего детства.
+            {t(
+              "Этот пакет предназначен для семей, которые хотят обеспечить своим детям уход и развитие на этапе раннего детства."
+            )}
           </p>
           {openIndex !== 1 && (
             <button
               className="services__button"
               onClick={() => handleToggleDetails(1)}
             >
-              Подробнее
+              {t("Подробнее")}
             </button>
           )}
           <div
@@ -120,56 +174,106 @@ export default function Services() {
           >
             {openIndex === 1 && (
               <div className="services__details-content">
-                <ul className="services__sub-list">
-                  <span className="services__info">Включает:</span>
-                  <li className="services__sub-item">
-                    <img src={checkbox} alt="" />
-                    Ежедневный уход и наблюдение за детьми
-                  </li>
-                  <li className="services__sub-item">
-                    <img src={checkbox} alt="" />
-                    Образовательные и развивающие занятия
-                  </li>
-                  <li className="services__sub-item">
-                    <img src={checkbox} alt="" />
-                    Основные медицинские знания (первая помощь, базовые
-                    медицинские наблюдения)
-                  </li>
-                  <li className="services__sub-item">
-                    <img src={checkbox} alt="" />
-                    Ежедневные отчеты для родителей
-                  </li>
-                </ul>
-                <ul className="services__sub-list">
-                  <span className="services__info">Преимущества:</span>
-                  <li className="services__sub-item">
-                    <img src={checkbox} alt="" />
-                    Доступная стоимость
-                  </li>
-                  <li className="services__sub-item">
-                    <img src={checkbox} alt="" />
-                    Профессиональные и заботливые специалисты
-                  </li>
-                  <li className="services__sub-item">
-                    <img src={checkbox} alt="" />
-                    Основной набор услуг для безопасности и развития ребенка
-                  </li>
-                </ul>
-                <div className="services__price-wrapper">
-                  <span className="services__price-text">Цена:</span>
-                  <span className="services__price-tag">от 400 000 тенге</span>
+                <div className="services__list-wrapper">
+                  <ul className="services__sub-list">
+                    <span className="services__info">{t("Включает:")}</span>
+                    <li className="services__sub-item">
+                      <img
+                        className="services__checkbox"
+                        src={checkbox}
+                        alt=""
+                      />
+                      {t("Уход и наблюдение за детьми в возрасте от 1 до 3 лет")}
+                    </li>
+                    <li className="services__sub-item">
+                      <img
+                        className="services__checkbox"
+                        src={checkbox}
+                        alt=""
+                      />
+                      {t("Индивидуальные программы раннего развития")}
+                    </li>
+                    <li className="services__sub-item">
+                      <img
+                        className="services__checkbox"
+                        src={checkbox}
+                        alt=""
+                      />
+                      {t(
+                        "Образовательные и развивающие занятия, направленные на развитие моторных и когнитивных навыков"
+                      )}
+                    </li>
+                    <li className="services__sub-item">
+                      <img
+                        className="services__checkbox"
+                        src={checkbox}
+                        alt=""
+                      />
+                      {t("Поддержка в формировании привычек гигиены и самообслуживания")}
+                    </li>
+                    <li className="services__sub-item">
+                      <img
+                        className="services__checkbox"
+                        src={checkbox}
+                        alt=""
+                      />
+                      {t("Медицинское наблюдение и первая помощь")}
+                    </li>
+                    <li className="services__sub-item">
+                      <img
+                        className="services__checkbox"
+                        src={checkbox}
+                        alt=""
+                      />
+                      {t("Ежемесячные отчеты и консультации с родителями")}
+                    </li>
+                  </ul>
+                  <ul className="services__sub-list">
+                    <span className="services__info">{t("Преимущества:")}</span>
+                    <li className="services__sub-item">
+                      <img
+                        className="services__checkbox"
+                        src={checkbox}
+                        alt=""
+                      />
+                      {t("Специалисты с медицинским и педагогическим образованием")}
+                    </li>
+                    <li className="services__sub-item">
+                      <img
+                        className="services__checkbox"
+                        src={checkbox}
+                        alt=""
+                      />
+                      {t("Индивидуальный подход к развитию ребенка")}
+                    </li>
+                    <li className="services__sub-item">
+                      <img
+                        className="services__checkbox"
+                        src={checkbox}
+                        alt=""
+                      />
+                      {t(
+                        "Постоянная связь с родителями и регулярные консультации"
+                      )}
+                    </li>
+                  </ul>
                 </div>
                 <p className="services__sub-description">
-                  Запишитесь на консультацию, чтобы узнать, подходит ли вам этот
-                  план, и подробный разбор вопросов
+                  {t(
+                    "Запишитесь на консультацию, чтобы узнать, подходит ли вам этот план, и подробный разбор вопросов"
+                  )}
                 </p>
-                <button className="services__button">Записаться</button>
-                <button
-                  className="services__button services__button--transparent"
-                  onClick={() => handleToggleDetails(1)}
-                >
-                  Свернуть
-                </button>
+                <div className="services__button-group">
+                  <button className="services__button" onClick={togglePopup}>
+                    {t("Записаться")}
+                  </button>
+                  <button
+                    className="services__button services__button--transparent"
+                    onClick={() => handleToggleDetails(1)}
+                  >
+                    {t("Свернуть")}
+                  </button>
+                </div>
               </div>
             )}
           </div>
@@ -180,19 +284,26 @@ export default function Services() {
             openIndex === 2 ? "services__item--opened" : ""
           }`}
         >
-          <h3 className="services__title">Пакет "Дошкольник" (3-5 лет)</h3>
-          <span className="services__info">Кому подходит:</span>
+          <div className="services__title-wrapper">
+            <h3 className="services__title">
+              {t("Пакет «Дошкольник» (3-5 лет)")}
+            </h3>
+            <span className="services__price-tag">
+              {t("от 400 000 тенге")}{" "}
+            </span>
+          </div>
+          <span className="services__info">{t("Кому подходит:")} </span>
           <p className="services__description">
-            Этот пакет разработан для семей, которые хотят обеспечить своим
-            детям максимальный уровень заботы и подготовки к дошкольному
-            образованию.
+            {t(
+              "Этот пакет разработан для семей, которые хотят обеспечить своим детям максимальный уровень заботы и подготовки к дошкольному образованию."
+            )}
           </p>
           {openIndex !== 2 && (
             <button
               className="services__button"
               onClick={() => handleToggleDetails(2)}
             >
-              Подробнее
+              {t("Подробнее")}
             </button>
           )}
           <div
@@ -202,56 +313,108 @@ export default function Services() {
           >
             {openIndex === 2 && (
               <div className="services__details-content">
-                <ul className="services__sub-list">
-                  <span className="services__info">Включает:</span>
-                  <li className="services__sub-item">
-                    <img src={checkbox} alt="" />
-                    Ежедневный уход и наблюдение за детьми
-                  </li>
-                  <li className="services__sub-item">
-                    <img src={checkbox} alt="" />
-                    Образовательные и развивающие занятия
-                  </li>
-                  <li className="services__sub-item">
-                    <img src={checkbox} alt="" />
-                    Основные медицинские знания (первая помощь, базовые
-                    медицинские наблюдения)
-                  </li>
-                  <li className="services__sub-item">
-                    <img src={checkbox} alt="" />
-                    Ежедневные отчеты для родителей
-                  </li>
-                </ul>
-                <ul className="services__sub-list">
-                  <span className="services__info">Преимущества:</span>
-                  <li className="services__sub-item">
-                    <img src={checkbox} alt="" />
-                    Доступная стоимость
-                  </li>
-                  <li className="services__sub-item">
-                    <img src={checkbox} alt="" />
-                    Профессиональные и заботливые специалисты
-                  </li>
-                  <li className="services__sub-item">
-                    <img src={checkbox} alt="" />
-                    Основной набор услуг для безопасности и развития ребенка
-                  </li>
-                </ul>
-                <div className="services__price-wrapper">
-                  <span className="services__price-text">Цена:</span>
-                  <span className="services__price-tag">от 400 000 тенге</span>
+                <div className="services__list-wrapper">
+                  <ul className="services__sub-list">
+                    <span className="services__info">Включает:</span>
+                    <li className="services__sub-item">
+                      <img
+                        className="services__checkbox"
+                        src={checkbox}
+                        alt=""
+                      />
+                      {t("Полный уход и наблюдение за детьми в возрасте от 3 до 5 лет")}
+                    </li>
+                    <li className="services__sub-item">
+                      <img
+                        className="services__checkbox"
+                        src={checkbox}
+                        alt=""
+                      />
+                      {t("Индивидуальные образовательные программы, подготовка к детскому саду и школе")}
+                    </li>
+                    <li className="services__sub-item">
+                      <img
+                        className="services__checkbox"
+                        src={checkbox}
+                        alt=""
+                      />
+                      {t(
+                        "Развивающие занятия и игры, направленные на развитие социальных и когнитивных навыков"
+                      )}
+                    </li>
+                    <li className="services__sub-item">
+                      <img
+                        className="services__checkbox"
+                        src={checkbox}
+                        alt=""
+                      />
+                      {t("Регулярные физические активности и занятия спортом")}
+                    </li>
+                    <li className="services__sub-item">
+                      <img
+                        className="services__checkbox"
+                        src={checkbox}
+                        alt=""
+                      />
+                      {t("Медицинское наблюдение, консультирование по питанию и здоровью")}
+                    </li>
+                    <li className="services__sub-item">
+                      <img
+                        className="services__checkbox"
+                        src={checkbox}
+                        alt=""
+                      />
+                      {t("Еженедельные отчеты и консультации с родителями")}
+                    </li>
+                  </ul>
+                  <ul className="services__sub-list">
+                    <span className="services__info">
+                      {t("Преимущества:")}{" "}
+                    </span>
+                    <li className="services__sub-item">
+                      <img
+                        className="services__checkbox"
+                        src={checkbox}
+                        alt=""
+                      />
+                      {t("Специалисты с медицинским и педагогическим образованием")}
+                    </li>
+                    <li className="services__sub-item">
+                      <img
+                        className="services__checkbox"
+                        src={checkbox}
+                        alt=""
+                      />
+                      {t("Комплексный подход к развитию и подготовке к школе")}
+                    </li>
+                    <li className="services__sub-item">
+                      <img
+                        className="services__checkbox"
+                        src={checkbox}
+                        alt=""
+                      />
+                      {t(
+                        "Постоянная обратная связь и поддержка для родителей"
+                      )}
+                    </li>
+                  </ul>
                 </div>
                 <p className="services__sub-description">
-                  Запишитесь на консультацию, чтобы узнать, подходит ли вам этот
-                  план, и подробный разбор вопросов
+                  {t(
+                    "Запишитесь на консультацию, чтобы узнать, подходит ли вам этот план, и подробный разбор вопросов"
+                  )}
                 </p>
-                <button className="services__button">Записаться</button>
-                <button
-                  className="services__button services__button--transparent"
-                  onClick={() => handleToggleDetails(2)}
-                >
-                  Свернуть
-                </button>
+                <div className="services__button-group">
+                  <button className="services__button" onClick={togglePopup}>
+                    {t("Записаться")}
+                  </button>
+                  <button
+                    className="services__button services__button--transparent"
+                    onClick={() => handleToggleDetails(2)}
+                  >
+                    {t("Свернуть")}
+                  </button>
+                </div>
               </div>
             )}
           </div>

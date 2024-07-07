@@ -38,7 +38,7 @@
 
 .hire-order__polygon {
   position: absolute;
-  right: -34px;
+  right: -33px;
   top: 0;
   z-index: 2;
 }
@@ -81,4 +81,74 @@
   font-weight: 500;
   line-height: 24px;
   text-align: left;
+}
+
+@media (max-width: 1919px) {
+  .hire-order {
+    padding: 60px 160px;
+  }
+}
+
+@media (max-width: 1439px) {
+  .hire-order {
+    padding: 60px 60px;
+  }
+
+  .hire-order__list {
+    flex-direction: column;
+  }
+
+  .hire-order__item {
+    width: unset;
+    height: 113px;
+    justify-content: center;
+    padding: 59px 20px 20px;
+  }
+
+  .hire-order__item-title {
+    text-align: center;
+  }
+
+  .hire-order__item-description {
+    text-align: center;
+  }
+
+  .hire-order__item-wrapper {
+    max-width: unset;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .hire-order__item--first-item {
+    border-radius: 20px 2px 0 0;
+    padding-top: 40px;
+  }
+
+  .hire-order__item--fourth-item {
+    background: #e0f2f9;
+    border-radius: 0 0 20px 20px;
+  }
+
+  .hire-order__polygon {
+    position: absolute;
+    right: unset;
+    top: unset;
+    bottom: -25px;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+  }
+
+  .hire-oder__word-breaker {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .hire-order {
+    padding: 60px 16px;
+  }
+
+  .hire-order__polygon {
+    bottom: -15px;
+  }
 }

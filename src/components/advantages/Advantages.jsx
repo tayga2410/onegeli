@@ -35,56 +35,57 @@ import womanImageMobile from "../../assets/advantages/advantages-woman-image-mob
 import blueEllipseRightDesktop from "../../assets/advantages/advantages-ellipse-blue-right-desktop.png";
 import blueEllipseRightSemitablet from "../../assets/advantages/advantages-ellipse-blue-right-semitablet.png";
 import blueEllipseRightMobile from "../../assets/advantages/advantages-ellipse-blue-right-mobile.png";
-import blueVisualFirst from '../../assets/advantages/advantages-blue-visual-1.png';
-import blueVisualSecond from '../../assets/advantages/advantages-blue-visual-2.png';
-
+import blueVisualFirst from "../../assets/advantages/advantages-blue-visual-1.png";
+import blueVisualSecond from "../../assets/advantages/advantages-blue-visual-2.png";
+import { useTranslation } from "react-i18next";
 
 export default function Advantages() {
+  const { t } = useTranslation();
   return (
     <section className="advantages">
       <ul className="advantages__list">
         <li className="advantages__item advantages__item--orange">
           <h2 className="advantages__header advantages__header--orange">
-            Ответственность и гарантии
+            {t("Ответственность и гарантии")}
           </h2>
           <p className="advantages__description  advantages__description--orange">
-            Мы уверенны в профессионализме наших сотрудников, ведь проводим
-            строгий отбор и берем за них полную ответственность.
+            {t(
+              "Мы уверенны в профессионализме наших сотрудников, ведь проводим строгий отбор и берем за них полную ответственность."
+            )}
           </p>
           <ul className="advantages__sub-list">
             <li className="advantages__sub-item">
               <img className="advantages__icon" src={orangeIconOne} alt="" />
-              <p className="advantages__title advantages__title--orange">
-                Специалисты с опытом работы
+              <p className="advantages__title advantages__title--orange">{t("Специалисты с опытом работы")}
               </p>
             </li>
             <li className="advantages__sub-item">
               <img className="advantages__icon" src={orangeIconTwo} alt="" />
-              <p className="advantages__title advantages__title--orange">
-                Педагогическое или медицинское образование
+              <p className="advantages__title advantages__title--orange">{t("Педагогическое или медицинское образование")}
+                
               </p>
             </li>
             <li className="advantages__sub-item">
               <img className="advantages__icon" src={orangeIconThree} alt="" />
-              <p className="advantages__title advantages__title--orange">
-                Оценка психологического состояния
+              <p className="advantages__title advantages__title--orange">{t("Оценка психологического состояния")}
+               
               </p>
             </li>
             <li className="advantages__sub-item">
               <img className="advantages__icon" src={orangeIconFour} alt="" />
-              <p className="advantages__title advantages__title--orange">
-                Проверка всех документов и сертификатов
+              <p className="advantages__title advantages__title--orange">{t("Проверка всех документов и сертификатов")}
+                
               </p>
             </li>
             <li className="advantages__sub-item">
               <img className="advantages__icon" src={orangeIconFive} alt="" />
-              <p className="advantages__title advantages__title--orange">
-                Постоянное повышение квалификации
+              <p className="advantages__title advantages__title--orange">{t("Постоянное повышение квалификации")}
+                
               </p>
             </li>
           </ul>
           <picture>
-          <source
+            <source
               srcSet={orangeEllipseLeftSemitablet}
               media="(max-width: 1019px)"
             />
@@ -120,29 +121,28 @@ export default function Advantages() {
           <img className="advantages__decor-item" src={medalMobile} alt="" />
         </li>
         <li className="advantages__item advantages__item--green">
-          <h2 className="advantages__header advantages__header--green">
-            Индивидуальное развитие детей
+          <h2 className="advantages__header advantages__header--green">{t("Индивидуальное развитие детей")}
+            
           </h2>
-          <p className="advantages__description  advantages__description--green">
-            Помогаем детям раскрыться.
+          <p className="advantages__description  advantages__description--green">{t("Помогаем детям раскрыться.")}
+            
           </p>
           <ul className="advantages__sub-list">
             <li className="advantages__sub-item advantages__sub-item--stretched">
               <img className="advantages__icon" src={greenIconOne} alt="" />
-              <p className="advantages__title advantages__title--green">
-                Персонализирован<br className="advantages__word-breaker" />ные планы развития
+              <p className="advantages__title advantages__title--green">{t("Персонализированные планы развития")}
               </p>
             </li>
             <li className="advantages__sub-item advantages__sub-item--stretched">
               <img className="advantages__icon" src={greenIconTwo} alt="" />
-              <p className="advantages__title advantages__title--green">
-                Адаптация к потребностям ребенка
+              <p className="advantages__title advantages__title--green">{t("Адаптация к потребностям ребенка")}
+                
               </p>
             </li>
             <li className="advantages__sub-item advantages__sub-item--stretched">
               <img className="advantages__icon" src={greenIconThree} alt="" />
-              <p className="advantages__title advantages__title--green">
-                Развитие природных талантов
+              <p className="advantages__title advantages__title--green">{t("Развитие природных талантов")}
+                
               </p>
             </li>
           </ul>
@@ -183,30 +183,29 @@ export default function Advantages() {
           </picture>
         </li>
         <li className="advantages__item advantages__item--blue">
-          <h2 className="advantages__header advantages__header--blue">
-            Полное доверие
+          <h2 className="advantages__header advantages__header--blue">{t("Полное доверие")}
+            
           </h2>
-          <p className="advantages__description  advantages__description--blue">
-            Все процессы нашей работы крайне прозрачны, чтобы вы были спокойны
-            за своего ребенка.
+          <p className="advantages__description  advantages__description--blue">{t("Все процессы нашей работы крайне прозрачны, чтобы вы были спокойны за своего ребенка.")}
+            
           </p>
           <ul className="advantages__sub-list">
             <li className="advantages__sub-item advantages__sub-item--stretched">
               <img className="advantages__icon" src={blueIconOne} alt="" />
-              <p className="advantages__title advantages__title--blue">
-                Полная прозрачность.
+              <p className="advantages__title advantages__title--blue">{t("Полная прозрачность.")}
+                
               </p>
             </li>
             <li className="advantages__sub-item advantages__sub-item--stretched">
               <img className="advantages__icon" src={blueIconTwo} alt="" />
-              <p className="advantages__title advantages__title--blue">
-                Регулярные обновления и отчетность.
+              <p className="advantages__title advantages__title--blue">{t("Регулярные обновления и отчетность.")}
+                
               </p>
             </li>
             <li className="advantages__sub-item advantages__sub-item--stretched">
               <img className="advantages__icon" src={blueIconThree} alt="" />
-              <p className="advantages__title advantages__title--blue">
-                Консультации для родителей.
+              <p className="advantages__title advantages__title--blue">{t("Консультации для родителей.")}
+                
               </p>
             </li>
           </ul>
@@ -225,7 +224,7 @@ export default function Advantages() {
               srcSet={blueEllipseRightMobile}
               media="(max-width: 767px)"
             />
-              <source
+            <source
               srcSet={blueEllipseRightSemitablet}
               media="(max-width: 1019px)"
             />
@@ -235,16 +234,8 @@ export default function Advantages() {
               alt=""
             />
           </picture>
-          <img
-              className="advantages__visual-1"
-              src={blueVisualFirst}
-              alt=""
-            />
-            <img
-              className="advantages__visual-2"
-              src={blueVisualSecond}
-              alt=""
-            />
+          <img className="advantages__visual-1" src={blueVisualFirst} alt="" />
+          <img className="advantages__visual-2" src={blueVisualSecond} alt="" />
         </li>
       </ul>
     </section>

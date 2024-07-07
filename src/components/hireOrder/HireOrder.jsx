@@ -35,7 +35,7 @@ export default function HireOrder() {
               <h3 className="hire-order__item-title">⁠Проверка документов</h3>
               <p className="hire-order__item-description">
                 Проверка рекомендаций, документов, медицинское освидетельствова
-                <br></br>ние
+                <br className="hire-oder__word-breaker"></br>ние
               </p>
             </div>
             <picture>

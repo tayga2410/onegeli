@@ -8,19 +8,18 @@ import ellipseMobile from "../../assets/hero/hero-ellipse-mobile.svg";
 import HeroPopup from "./HeroPopup";
 import emailjs from "@emailjs/browser";
 import { useNavigate } from "react-router-dom";
+import { usePopup } from "./PopupContext";
+import { useTranslation } from "react-i18next";
 
 export default function Hero() {
+  const { t } = useTranslation();
   const navigate = useNavigate();
 
   const handleButtonClick = () => {
     navigate("/test");
   };
 
-  const [showPopup, setShowPopup] = useState(false);
-
-  const togglePopup = () => {
-    setShowPopup(!showPopup);
-  };
+  const { showPopup, togglePopup } = usePopup();
 
   const form = useRef();
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
@@ -59,18 +58,22 @@ export default function Hero() {
   };
 
   return (
-    <section className="hero">
+    <section className="hero" id="hero">
       <div className="hero__text-wrapper">
-        <h2 className="hero__header">Безопасность и развитие вашего ребенка</h2>
+        <h2 className="hero__header">
+          {t("Безопасность и развитие вашего ребенка")}
+        </h2>
         <p className="hero__description">
-          Обучаем и предоставляем проверенных специалистов по уходу за детьми.
+          {t(
+            "Обучаем и предоставляем проверенных специалистов по уходу за детьми."
+          )}
         </p>
         <div className="hero__button-group">
           <button
             onClick={togglePopup}
             className="hero__reservation-button hero__button"
           >
-            Бронь консультации
+            {t("Бронь консультации")}
           </button>
           <HeroPopup show={showPopup} handleClose={togglePopup}>
             <h2 className="hero__form-header">Запись на консультацию</h2>
@@ -135,8 +138,8 @@ export default function Hero() {
           <button
             className="hero__test-button hero__button"
             onClick={handleButtonClick}
-          >
-            Тест для родителей
+          >{t("Тест для родителей")}
+           
           </button>
         </div>
       </div>

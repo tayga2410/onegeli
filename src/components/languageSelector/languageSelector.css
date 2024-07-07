@@ -1,0 +1,39 @@
+.language-selector__container {
+  position: relative;
+  display: inline-block;
+}
+
+.language-selector__wrapper {
+  position: relative;
+  display: inline-block;
+  width: 68px;
+}
+
+.language-selector__select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: transparent;
+  color: #51555B;
+  border: none;
+  border-radius: 8px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.language-selector__wrapper::after {
+  content: 'v'; 
+  position: absolute;
+  right: 10px; 
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color:  #51555B;
+  font-size: 12px; 
+}
+
+.language-selector__select::-ms-expand {
+  display: none;
+}

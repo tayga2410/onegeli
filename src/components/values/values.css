@@ -17,7 +17,7 @@
 .values__header {
   text-align: center;
   margin: 0 0 20px;
-  font-family: Ubuntu, sans-serif;
+  font-family: Ubuntu;
   font-size: 26px;
   font-weight: 700;
   line-height: 31.2px;
@@ -105,15 +105,16 @@
   display: flex;
   gap: 12px;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .values__card-item {
-  padding: 20px 0;
+  padding: 12px;
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   border-radius: 16px;
   width: 214px;
 }
@@ -122,6 +123,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  gap: 4px;
 }
 
 .values__card-item-image {
@@ -131,13 +133,15 @@
 .values__card-item-header {
   font-size: 20px;
   line-height: 24px;
+  text-align: center;
 }
 
 .values__card-item-description {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
-  line-height: 24px;
+  line-height: 21.6px;
   color: #8d8e93;
+  text-align: center;
 }
 
 @media (max-width: 1919px) {
@@ -156,7 +160,7 @@
   }
 
   .values__card-item {
-    width: 170px;
+    width: 268px;
   }
 
  
@@ -165,20 +169,16 @@
     height: 80px;
   }
 
-  .values__card-item-header {
-    font-size: 14px;
-  }
-
-  .values__card-item-description {
-    font-size: 14px;
-  }
-
   .values__line-breaker {
     display: none;
   }
 }
 
 @media (max-width: 1019px) {
+  .values__wrapper {
+    padding: 40px 48px;
+  }
+
   .values__list {
     flex-direction: column;
   }
@@ -190,6 +190,10 @@
 
   .values__item-description {
     max-width: unset;
+  }
+
+  .values__card-item {
+    width: 192px;
   }
 
 }
@@ -205,25 +209,37 @@
     width: unset;
   }
 
-  .values__header {
-    font-size: 20px;
-  }
-
   .values__button {
     max-width: 366px;
-    font-size: 20px;
   }
 
   .values__card-list {
    flex-direction: column;
+   gap: 20px;
   }
   
 
   .values__card-item {
-    width: 366px;
+    width: unset;
+    max-width: 718px;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 16px;
     align-items: center;
+  }
+
+  .values__card-text-wrapper {
+    max-width: 218px;
+    align-items: start;
+  }
+
+  .values__card-item-image {
+    margin: 0;
+  }
+
+
+  .values__card-item-description,
+  .values__card-item-header{
+    text-align: left;
   }
 }
