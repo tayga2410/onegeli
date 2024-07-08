@@ -1,6 +1,8 @@
+import translations from '../../locales/translations.json'
+
 const data = [
   {
-    header: "Безопасность и Проверка Специалистов",
+    header: "Безопасность и Проверка Специалистов:",
     items: [
       {
         question: "Как вы проверяете квалификацию и опыт ваших специалистов?",
@@ -11,7 +13,7 @@ const data = [
         question:
           "Проходят ли ваши специалисты обязательные проверки на наличие судимостей и других юридических нарушений?",
         answer:
-          "Да, все наши специалисты проходят обязательные проверки на наличие судимостей и других юридических нарушений. Компонент — это независимый и повторно используемый блок кода, который управляет своим собственным состоянием.",
+          "Да, все наши специалисты проходят обязательные проверки на наличие судимостей и других юридических нарушений.",
       },
       {
         question:
@@ -127,4 +129,20 @@ const data = [
   },
 ];
 
-export default data;
+function translateText(text) {
+  return translations[text] || text;
+}
+
+function translateData(data) {
+  return data.map(section => ({
+    header: translateText(section.header),
+    items: section.items.map(item => ({
+      question: translateText(item.question),
+      answer: translateText(item.answer)
+    }))
+  }));
+}
+
+const translatedData = translateData(data);
+
+export default translatedData;

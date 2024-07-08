@@ -11,8 +11,11 @@ import tempImg from "../../assets/reviews/reviews-temp.png";
 import ellipseDesktop from '../../assets/reviews/reviews-ellipse-desktop.png';
 import ellipseTablet from '../../assets/reviews/reviews-ellipse-desktop.png';
 import ellipseMobile from '../../assets/reviews/reviews-ellipse-desktop.png';
+import { useTranslation } from "react-i18next";
 
 export default function Reviews() {
+  const { t } = useTranslation();
+
   return (
     <section className="reviews">
         <picture>
@@ -31,10 +34,9 @@ export default function Reviews() {
             />
           </picture>
       <div className="reviews__container">
-        <h2 className="reviews__header">Отзывы наших клиентов</h2>
-        <p className="reviews__description">
-          Все процессы нашей работы крайне прозрачны, чтобы вы были спокойны за
-          своего ребенка.
+        <h2 className="reviews__header">{t("Отзывы наших клиентов")}</h2>
+        <p className="reviews__description">{t("Все процессы нашей работы крайне прозрачны, чтобы вы были спокойны за своего ребенка.")}
+          
         </p>
         <div className="reviews__swiper-container">
           <Swiper
