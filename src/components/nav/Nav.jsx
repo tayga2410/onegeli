@@ -24,7 +24,7 @@ export default function Nav() {
         </li>
         <li className="nav__item">
           <a className="nav__link" href="">
-          {t("Планы")}
+          {t("Пакеты услуг")}
           </a>
         </li>
         <li className="nav__item">

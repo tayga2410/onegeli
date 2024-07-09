@@ -64,10 +64,12 @@ export default function ValuesDescription() {
           </ul>
         </li>
       </ul>
+      <a href="https://www.instagram.com/onegeli.kz/" target="_blank">
       <button className="values__button">
         <img src={instagram} alt="" />{t("Подробнее по подготовке")}
-       
       </button>
+        </a>
+       
     </div>
   );
 }

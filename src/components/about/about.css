@@ -21,6 +21,8 @@
   height: 177px;
   margin: 0;
   flex-shrink: 0;
+  border-radius: 8px;
+  z-index: 10;
 }
 
 .about__text-wrapper {
@@ -41,6 +43,21 @@
   line-height: 24px;
 }
 
+@media (max-width: 1919px) {
+
+}
+
+@media (max-width: 1439px) {
+  .about__text-wrapper {
+    max-width: 440px;
+  }
+  
+  .about__iframe {
+    height: 278px;
+  }
+  
+}
+
 @media (max-width: 1019px) {
   .about__wrapper {
     max-width: 748px;
@@ -51,9 +68,6 @@
   .about__iframe {
     width: 650px;
     height: 280px;
-  }
-
-  .about__description {
   }
 }
 

@@ -87,6 +87,7 @@
 .values__button {
   display: flex;
   align-items: center;
+  justify-content: center;
   margin: 0 auto;
   gap: 16px;
   width: 362px;
@@ -184,7 +185,7 @@
   }
 
   .values__item {
-    width: 100%;
+    width: 94%;
     max-width: unset;
   }
 
