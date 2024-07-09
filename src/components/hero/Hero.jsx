@@ -5,6 +5,7 @@ import tabletHero from "../../assets/hero/hero-image-tablet.png";
 import mobileHero from "../../assets/hero/hero-image-mobile.png";
 import ellipse from "../../assets/hero/hero-ellipse.svg";
 import ellipseMobile from "../../assets/hero/hero-ellipse-mobile.svg";
+import mainLogoLightBlue from '../../assets/hero/logo-main-light-blue.png'
 import HeroPopup from "./HeroPopup";
 import emailjs from "@emailjs/browser";
 import { useNavigate } from "react-router-dom";
@@ -60,6 +61,7 @@ export default function Hero() {
   return (
     <section className="hero" id="hero">
       <div className="hero__text-wrapper">
+      <img className="hero__logo" src={mainLogoLightBlue} alt="" />
         <h2 className="hero__header">
           {t("Безопасность и развитие вашего ребенка")}
         </h2>
@@ -152,6 +154,7 @@ export default function Hero() {
         <source srcSet={ellipseMobile} media="(max-width: 767px)" />
         <img className="hero__decor-image" src={ellipse} alt="" />
       </picture>
+      
     </section>
   );
 }

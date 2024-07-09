@@ -11,7 +11,7 @@ import polygonTablet3 from '../../assets/hire-order/hire-order-polygon-3-tablet.
 
 export default function HireOrder() {
   return (
-    <section className="hire-order">
+    <section className="hire-order" id="hire-order">
       <h2 className="hire-order__header">Порядок найма</h2>
       <picture>
         <source srcSet={ellipseMobile} media="(max-width: 767px)" />

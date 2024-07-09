@@ -5,15 +5,15 @@ export default function About() {
   const { t } = useTranslation();
 
   return (
-    <section className="about">
+    <section className="about" id="about">
       <div className="about__wrapper">
         <iframe
          className="about__iframe"
           src="https://www.youtube.com/embed/jHFtK_H80M0?si=K3p-ZMifTxmc5ZbB"
           title="YouTube video player"
-          frameborder="0"
+          frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
+          referrerPolicy="strict-origin-when-cross-origin"
           allowFullScreen
         ></iframe>
         <div className="about__text-wrapper">

@@ -42,7 +42,7 @@ import { useTranslation } from "react-i18next";
 export default function Advantages() {
   const { t } = useTranslation();
   return (
-    <section className="advantages">
+    <section className="advantages" id="advantages">
       <ul className="advantages__list">
         <li className="advantages__item advantages__item--orange">
           <h2 className="advantages__header advantages__header--orange">

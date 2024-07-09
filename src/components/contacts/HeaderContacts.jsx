@@ -18,8 +18,8 @@ export default function headerContacts() {
                </div>
             </div>
             <div className='contacts__socials'>
-                <img src={whatsapp} alt="" />
                 <img src={instagram} alt="" />
+                <img src={whatsapp} alt="" />
             </div>
         </section>
     )

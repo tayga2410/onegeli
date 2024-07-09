@@ -17,7 +17,7 @@ export default function Reviews() {
   const { t } = useTranslation();
 
   return (
-    <section className="reviews">
+    <section className="reviews" id="reviews">
         <picture>
           <source
               srcSet={ellipseMobile}

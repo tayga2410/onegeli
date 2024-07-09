@@ -16,7 +16,7 @@ export default function Services() {
   const { togglePopup } = usePopup();
 
   return (
-    <section className="services">
+    <section className="services" id="services">
       <h2 className="services__header">{t("Наши услуги")}</h2>
       <ul className="services__list">
         <li

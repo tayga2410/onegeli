@@ -1,6 +1,7 @@
 .language-selector__container {
   position: relative;
   display: inline-block;
+  z-index: 21;
 }
 
 .language-selector__wrapper {
@@ -16,7 +17,7 @@
   cursor: pointer;
   background-color: transparent;
   color: #51555B;
-  border: none;
+  border: 1.6px solid #F0F0F0;
   border-radius: 8px;
   appearance: none;
   -webkit-appearance: none;
