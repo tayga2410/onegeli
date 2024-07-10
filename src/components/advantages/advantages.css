@@ -2,6 +2,7 @@
   padding: 40px 400px 94px;
   text-align: center;
   position: relative;
+  overflow: hidden;
 }
 
 .advantages__item--orange {
@@ -86,7 +87,7 @@
   font-size: 18px;
   font-weight: 600;
   line-height: 21.6px;
-  max-width: 191px;
+  max-width: 341px;
 }
 
 .advantages__title--orange {
@@ -95,7 +96,6 @@
 
 .advantages__title--green {
   color: #001524;
-  max-width: unset;
 }
 
 .advantages__title--blue {
@@ -117,8 +117,17 @@
   z-index: 1;
 }
 
-.advantages__decor-item {
-  display: none;
+.advantages__medal {
+  position: absolute;
+  left: 0;
+  top: 38px;
+}
+
+.advantages__certificate {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
 }
 
 .advantages__child-image {
@@ -171,28 +180,12 @@
 }
 
 @media (max-width: 1919px) {
-  .advantages__sub-item--stretched {
-    width: 275px;
-  }
-}
-
-@media (max-width: 1439px) {
-  .advantages__word-breaker {
-    display: block;
-  }
-
-  .advantages__sub-item--stretched {
-    width: 176px;
-  }
-
-  .advantages__title--green {
-    max-width: 150px;
-  }
-}
-
-@media (max-width: 1919px) {
   .advantages__item {
     padding: 40px 160px 94px;
+  }
+
+  .advantages__sub-item--stretched {
+    width: 275px;
   }
 
   .advantages__item--green,
@@ -217,7 +210,32 @@
   }
 }
 
+@media (max-width: 1439px) {
+  .advantages__word-breaker {
+    display: block;
+  }
+
+  .advantages__sub-item--stretched {
+    width: 176px;
+  }
+
+  .advantages__title {
+    max-width: 275px;
+  }
+
+  .advantages__title--green {
+    max-width: 150px;
+  }
+
+  .advantages__medal {
+    top: 290px;
+  }
+}
+
 @media (max-width: 1019px) {
+  .advantages__item {
+    padding: 40px 160px 197px;
+}
   .advantages__sub-item--stretched {
     width: unset;
   }
@@ -232,11 +250,15 @@
 
   .advantages__item--green,
   .advantages__item--blue {
-    padding: 40px 40px 209px;
+    padding: 40px 40px 258px;
   }
 
   .advantages__description {
     font-size: 13px;
+  }
+
+  .advantages__medal {
+    top: 500px;
   }
 
   .advantages__child-image {
@@ -263,7 +285,7 @@
 
 @media (max-width: 767px) {
   .advantages__item {
-    padding: 40px 20px 206px;
+    padding: 40px 20px 260px;
     text-align: left;
   }
 
@@ -299,11 +321,8 @@
     display: none;
   }
 
-  .advantages__decor-item {
-    display: block;
-    position: absolute;
-    right: 33px;
-    bottom: 15px;
+  .advantages__medal {
+    display: none;
   }
 
   .advantages__child-image {

@@ -46,8 +46,7 @@ export default function Reviews() {
             pagination={{ clickable: true }}
             loop={false}
             navigation
-            onSwiper={(swiper) => console.log(swiper)}
-            onSlideChange={() => console.log("slide change")}
+            onSwiper={(swiper) => (swiper)}
             breakpoints={{
               390: {
                 slidesPerView: 1,

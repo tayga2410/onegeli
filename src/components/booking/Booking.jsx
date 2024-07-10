@@ -80,7 +80,7 @@ export default function Booking() {
         <picture>
           <source srcSet={bookingMobile} media="(max-width: 767px)" />
           <source srcSet={bookingTablet} media="(max-width: 1439px)" />
-          <img className="booking__image" src={bookingDesktop} alt="" />
+          <img className="booking__image" src={bookingDesktop} alt="мальчик рисует на столе." />
         </picture>
       </div>
       <picture>

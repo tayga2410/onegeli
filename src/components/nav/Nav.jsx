@@ -32,6 +32,7 @@ export default function Nav() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [prevScrollPos]);
+  
 
   return (
     <nav className="nav__container">
@@ -57,39 +58,39 @@ export default function Nav() {
               </a>
             </li>
             <li className="nav__item">
-              <a className="nav__link" href="#about">
+              <a className="nav__link" href="#about" onClick={handleLinkClick}>
                 {t("О Нас")}
               </a>
             </li>
             <li className="nav__item">
-              <a className="nav__link" href="/#advantages">
+              <a className="nav__link" href="/#advantages" onClick={handleLinkClick}>
                 {t("Особенности")}
               </a>
             </li>
             <li className="nav__item">
-              <a className="nav__link" href="/#services">
+              <a className="nav__link" href="/#services" onClick={handleLinkClick}>
                 {t("Пакеты услуг")}
               </a>
             </li>
             <li className="nav__item">
-              <a className="nav__link" href="/#reviews">
+              <a className="nav__link" href="/#reviews" onClick={handleLinkClick}>
                 {t("Отзывы")}
               </a>
             </li>
             <li className="nav__item">
-            <Link className="nav__link" to="/test">
+            <Link className="nav__link" to="/test" onClick={handleLinkClick}>
                 {t("Тест для родителей")}
               </Link>
             </li>
-            <li className="nav__item">
-            <Link className="nav__link" to="/hire/#hire-order">{t("Условия найма")}
+            <li className="nav__item"> 
+            <Link className="nav__link" to="/hire/#hire-order" onClick={handleLinkClick}>{t("Условия найма")} 
           </Link>
             </li>
             <li className="nav__item">
               <ul className="nav__list nav__list--contacts">
                 <h3 className="nav__list-item-header">{t("Контакты")}</h3>
                 <li className="nav__list-item nav__list-item--blue-modified">
-                  <a className="nav__link nav__link--blue" href="tel:+77780990422">
+                  <a className="nav__link nav__link--blue" href="tel:+77780990422" onClick={handleLinkClick}>
                     +77780990422
                   </a>
                 </li>
@@ -97,6 +98,7 @@ export default function Nav() {
                   <a
                     className="nav__link"
                     href="mailto:onegeli.kz@gmail.com"
+                    onClick={handleLinkClick}
                   >
                     onegeli.kz@gmail.com
                   </a>
@@ -105,7 +107,7 @@ export default function Nav() {
                   {t("Туркестан 16, офис 3015")}
                 </li>
               </ul>
-              <a className="nav__link" href="tel:+77780990422"><button className="nav__button">Перейти в Whatsapp</button></a>
+              <a className="nav__link" href="tel:+77780990422" onClick={handleLinkClick}><button className="nav__button">Перейти в Whatsapp</button></a>
             </li>
           </ul>
         </div>
@@ -117,26 +119,27 @@ export default function Nav() {
           </a>
         </li>
         <li className="nav__item">
-              <a className="nav__link" href="/#about">
+              <a className="nav__link" href="/#about" onClick={handleLinkClick}>
                 {t("О Нас")}
               </a>
             </li>
         <li className="nav__item">
-        <a className="nav__link" href="/#advantages">
+        <a className="nav__link" href="/#advantages" onClick={handleLinkClick}>
             {t("Особенности")}
           </a>
         </li>
         <li className="nav__item">
-          <a className="nav__link" href="/#services">
+          <a className="nav__link" href="/#services" onClick={handleLinkClick}>
             {t("Пакеты услуг")}
           </a>
         </li>
         <li className="nav__item">
-          <a className="nav__link" href="/#reviews">
+          <a className="nav__link" href="/#reviews" onClick={handleLinkClick}>
             {t("Отзывы")}
           </a>
         </li>
       </ul>
+      <div className={`menu-overlay ${isOpen ? "open" : ""}`} onClick={toggleMenu}></div>
     </nav>
   );
 }

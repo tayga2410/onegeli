@@ -5,11 +5,14 @@ import heroChildTablet from "../../assets/hero/hero-child-tablet.png";
 import heroChildMobile from "../../assets/hero/hero-child-mobile.png";
 import ellipse from "../../assets/hero/hero-ellipse.svg";
 import ellipseMobile from "../../assets/test/test-hero-ellipse-mobile.png";
-import starsDesktop from '../../assets/test/test-hero-stars-image-desktop.png'
-import starsTablet from '../../assets/test/test-hero-stars-image-tablet.png'
-import starsMobile from '../../assets/test/test-hero-stars-image-mobile.png'
+import starsDesktop from "../../assets/test/test-hero-stars-image-desktop.png";
+import starsTablet from "../../assets/test/test-hero-stars-image-tablet.png";
+import starsMobile from "../../assets/test/test-hero-stars-image-mobile.png";
+import { useTranslation } from "react-i18next";
 
 export default function HeroTest() {
+  const { t } = useTranslation();
+
   const navigate = useNavigate();
 
   const handleQuizButtonClick = () => {
@@ -22,22 +25,25 @@ export default function HeroTest() {
   return (
     <section className="test-hero">
       <div className="test-hero__text-wrapper">
-        <h2 className="test-hero__header">Тест для родителей</h2>
+        <h2 className="test-hero__header">{t("Тест для родителей")}</h2>
         <p className="test-hero__description">
-          Этот тест разработан на основе рекомендаций Американской Академии
-          Педиатрии (AAP) и Национального Института Здоровья (NIH), чтобы помочь
-          родителям оценить свои знания в области ухода и развития детей в
-          раннем возрасте.
+          {t(
+            "Этот тест разработан на основе рекомендаций Американской Академии Педиатрии (AAP) и Национального Института Здоровья (NIH), чтобы помочь родителям оценить свои знания в области ухода и развития детей в раннем возрасте."
+          )}
         </p>
         <div className="test-hero__button-group">
-          <button className="test-hero__test-start-button hero__button" onClick={handleQuizButtonClick}>
-            Начать тест
+          <button
+            className="test-hero__test-start-button hero__button"
+            onClick={handleQuizButtonClick}
+          >
+            {t("Начать тест")}
           </button>
           <button
             className="test-hero__test-cancel-button hero__test-button hero__button"
             onClick={handleMainPageButtonClick}
           >
-            На главную страницу
+            {" "}
+            {t("На главную страницу")}
           </button>
         </div>
       </div>

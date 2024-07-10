@@ -20,7 +20,11 @@ import orangeEllipseRightSemitablet from "../../assets/advantages/advantages-ell
 import greenEllipseLeftDesktop from "../../assets/advantages/advantages-ellipse-green-left-desktop.png";
 import greenEllipseLeftSemitablet from "../../assets/advantages/advantages-ellipse-green-left-semitablet.png";
 import greenEllipseLeftMobile from "../../assets/advantages/advantages-ellipse-green-left-mobile.png";
-import medalMobile from "../../assets/advantages/advantages-medal-mobile.png";
+import medalDesktop from "../../assets/advantages/advantages-medal-desktop.png";
+import medalTablet from "../../assets/advantages/advantages-medal-tablet.png";
+import certificateWide from "../../assets/advantages/advantages-certificate-desktop.png";
+import certificateTablet from "../../assets/advantages/advantages-certificate-tablet.png";
+import certificateMobile from "../../assets/advantages/advantages-certificate-mobile.png";
 import childDesktop from "../../assets/advantages/advantages-child-image-desktop.png";
 import childTablet from "../../assets/advantages/advantages-child-image-tablet.png";
 import childSemitablet from "../../assets/advantages/advantages-child-image-semitablet.png";
@@ -38,13 +42,20 @@ import blueEllipseRightMobile from "../../assets/advantages/advantages-ellipse-b
 import blueVisualFirst from "../../assets/advantages/advantages-blue-visual-1.png";
 import blueVisualSecond from "../../assets/advantages/advantages-blue-visual-2.png";
 import { useTranslation } from "react-i18next";
+import AnimatedImage from "../utils/AnimatedImage";
+import { useRef } from "react";
 
 export default function Advantages() {
+  const containerRef = useRef();
+
   const { t } = useTranslation();
   return (
     <section className="advantages" id="advantages">
       <ul className="advantages__list">
-        <li className="advantages__item advantages__item--orange">
+        <li
+          className="advantages__item advantages__item--orange"
+          ref={containerRef}
+        >
           <h2 className="advantages__header advantages__header--orange">
             {t("Ответственность и гарантии")}
           </h2>
@@ -56,31 +67,32 @@ export default function Advantages() {
           <ul className="advantages__sub-list">
             <li className="advantages__sub-item">
               <img className="advantages__icon" src={orangeIconOne} alt="" />
-              <p className="advantages__title advantages__title--orange">{t("Специалисты с опытом работы")}
+              <p className="advantages__title advantages__title--orange">
+                {t("Специалисты с опытом работы")}
               </p>
             </li>
             <li className="advantages__sub-item">
               <img className="advantages__icon" src={orangeIconTwo} alt="" />
-              <p className="advantages__title advantages__title--orange">{t("Педагогическое или медицинское образование")}
-                
+              <p className="advantages__title advantages__title--orange">
+                {t("Педагогическое или медицинское образование")}
               </p>
             </li>
             <li className="advantages__sub-item">
               <img className="advantages__icon" src={orangeIconThree} alt="" />
-              <p className="advantages__title advantages__title--orange">{t("Оценка психологического состояния")}
-               
+              <p className="advantages__title advantages__title--orange">
+                {t("Оценка психологического состояния")}
               </p>
             </li>
             <li className="advantages__sub-item">
               <img className="advantages__icon" src={orangeIconFour} alt="" />
-              <p className="advantages__title advantages__title--orange">{t("Проверка всех документов и сертификатов")}
-                
+              <p className="advantages__title advantages__title--orange">
+                {t("Проверка всех документов и сертификатов")}
               </p>
             </li>
             <li className="advantages__sub-item">
               <img className="advantages__icon" src={orangeIconFive} alt="" />
-              <p className="advantages__title advantages__title--orange">{t("Постоянное повышение квалификации")}
-                
+              <p className="advantages__title advantages__title--orange">
+                {t("Постоянное повышение квалификации")}
               </p>
             </li>
           </ul>
@@ -118,31 +130,59 @@ export default function Advantages() {
               alt=""
             />
           </picture>
-          <img className="advantages__decor-item" src={medalMobile} alt="" />
+          <picture>
+            <source srcSet={medalTablet} media="(max-width: 1439px)" />
+            <AnimatedImage
+              src={medalDesktop}
+              alt=""
+              className="advantages__medal"
+              initialPosition={{ top: "-80px", left: "-40px" }}
+              animatePosition={{ top: "38px", left: "0" }}
+              tabletInitialPosition={{ top: "280px", left: "-80px" }}
+              tabletAnimatePosition={{ top: "290px", left: "0" }}
+              semiTabletInitialPosition={{ top: "510px", left: "-80px" }}
+              semiTabletAnimatePosition={{ top: "500px", left: "0" }}
+            />
+          </picture>
+          <picture>
+            <source srcSet={certificateMobile} media="(max-width: 767px)" />
+            <source srcSet={certificateTablet} media="(max-width: 1919px)" />
+            <AnimatedImage
+              className="advantages__certificate"
+              src={certificateWide}
+              alt=""
+              initialPosition={{ bottom: "-80px", right: "-100px" }}
+              animatePosition={{ bottom: "0", right: "0" }}
+            />
+          </picture>
         </li>
-        <li className="advantages__item advantages__item--green">
-          <h2 className="advantages__header advantages__header--green">{t("Индивидуальное развитие детей")}
-            
+        <li
+          className="advantages__item advantages__item--green"
+          ref={containerRef}
+        >
+          <h2 className="advantages__header advantages__header--green">
+            {t("Индивидуальное развитие детей")}
           </h2>
-          <p className="advantages__description  advantages__description--green">{t("Помогаем детям раскрыться.")}
-            
+          <p className="advantages__description  advantages__description--green">
+            {t("Помогаем детям раскрыться.")}
           </p>
           <ul className="advantages__sub-list">
             <li className="advantages__sub-item advantages__sub-item--stretched">
               <img className="advantages__icon" src={greenIconOne} alt="" />
-              <p className="advantages__title advantages__title--green">{t("Персонализированные планы развития")}
+              <p className="advantages__title advantages__title--green">
+                {t("Персонализированные планы развития")}
               </p>
             </li>
             <li className="advantages__sub-item advantages__sub-item--stretched">
               <img className="advantages__icon" src={greenIconTwo} alt="" />
-              <p className="advantages__title advantages__title--green">{t("Адаптация к потребностям ребенка")}
-                
+              <p className="advantages__title advantages__title--green">
+                {t("Адаптация к потребностям ребенка")}
               </p>
             </li>
             <li className="advantages__sub-item advantages__sub-item--stretched">
               <img className="advantages__icon" src={greenIconThree} alt="" />
-              <p className="advantages__title advantages__title--green">{t("Развитие природных талантов")}
-                
+              <p className="advantages__title advantages__title--green">
+                {t("Развитие природных талантов")}
               </p>
             </li>
           </ul>
@@ -150,10 +190,16 @@ export default function Advantages() {
             <source srcSet={childMobile} media="(max-width: 767px)" />
             <source srcSet={childSemitablet} media="(max-width: 1019px)" />
             <source srcSet={childTablet} media="(max-width: 1439px)" />
-            <img
+            <AnimatedImage
               className="advantages__child-image"
               src={childDesktop}
               alt=""
+              initialPosition={{ bottom: "-80px", left: "50px" }}
+              animatePosition={{ bottom: "0", left: "71px" }}
+              tabletInitialPosition={{ bottom: "-80px", left: "30px" }}
+              tabletAnimatePosition={{ bottom: "0", left: "41px" }}
+              mobileInitialPosition={{ bottom: "-80px", right: "30px" }}
+              mobileAnimatePosition={{ bottom: "0", right: "41px" }}
             />
           </picture>
           <picture>
@@ -175,37 +221,44 @@ export default function Advantages() {
           <picture>
             <source srcSet={greenDecorMobile} media="(max-width: 1019px)" />
             <source srcSet={greenDecorTablet} media="(max-width: 1439px)" />
-            <img
+            <AnimatedImage
               className="advantages__green-decor"
               src={greenDecorDesktop}
               alt=""
+              initialPosition={{ bottom: "-80px", right: "-20px" }}
+              animatePosition={{ bottom: "0", right: "0" }}
             />
           </picture>
         </li>
-        <li className="advantages__item advantages__item--blue">
-          <h2 className="advantages__header advantages__header--blue">{t("Полное доверие")}
-            
+        <li
+          className="advantages__item advantages__item--blue"
+          ref={containerRef}
+        >
+          <h2 className="advantages__header advantages__header--blue">
+            {t("Полное доверие")}
           </h2>
-          <p className="advantages__description  advantages__description--blue">{t("Все процессы нашей работы крайне прозрачны, чтобы вы были спокойны за своего ребенка.")}
-            
+          <p className="advantages__description  advantages__description--blue">
+            {t(
+              "Все процессы нашей работы крайне прозрачны, чтобы вы были спокойны за своего ребенка."
+            )}
           </p>
           <ul className="advantages__sub-list">
             <li className="advantages__sub-item advantages__sub-item--stretched">
               <img className="advantages__icon" src={blueIconOne} alt="" />
-              <p className="advantages__title advantages__title--blue">{t("Полная прозрачность.")}
-                
+              <p className="advantages__title advantages__title--blue">
+                {t("Полная прозрачность.")}
               </p>
             </li>
             <li className="advantages__sub-item advantages__sub-item--stretched">
               <img className="advantages__icon" src={blueIconTwo} alt="" />
-              <p className="advantages__title advantages__title--blue">{t("Регулярные обновления и отчетность.")}
-                
+              <p className="advantages__title advantages__title--blue">
+                {t("Регулярные обновления и отчетность.")}
               </p>
             </li>
             <li className="advantages__sub-item advantages__sub-item--stretched">
               <img className="advantages__icon" src={blueIconThree} alt="" />
-              <p className="advantages__title advantages__title--blue">{t("Консультации для родителей.")}
-                
+              <p className="advantages__title advantages__title--blue">
+                {t("Консультации для родителей.")}
               </p>
             </li>
           </ul>
@@ -213,10 +266,12 @@ export default function Advantages() {
             <source srcSet={womanImageMobile} media="(max-width: 767px)" />
             <source srcSet={womanImageSemitablet} media="(max-width: 1019px)" />
             <source srcSet={womanImageTablet} media="(max-width: 1439px)" />
-            <img
+            <AnimatedImage
               className="advantages__woman-image"
               src={womanImageDesktop}
               alt=""
+              initialPosition={{ bottom: "-80px", right: "-20px" }}
+              animatePosition={{ bottom: "0", right: "0" }}
             />
           </picture>
           <picture>
@@ -234,8 +289,28 @@ export default function Advantages() {
               alt=""
             />
           </picture>
-          <img className="advantages__visual-1" src={blueVisualFirst} alt="" />
-          <img className="advantages__visual-2" src={blueVisualSecond} alt="" />
+          <AnimatedImage
+            className="advantages__visual-1"
+            src={blueVisualFirst}
+            alt=""
+            initialPosition={{ bottom: "-80px", left: "37px" }}
+            animatePosition={{ bottom: "116px", left: "37px" }}
+            tabletInitialPosition={{ bottom: "-80px", left: "-10px" }}
+            tabletAnimatePosition={{ bottom: "116px", left: "-10px" }}
+            mobileInitialPosition={{ bottom: "-80px", left: "-10px" }}
+            mobileAnimatePosition={{ bottom: "116px", left: "-10px" }}
+          />
+          <AnimatedImage
+            className="advantages__visual-2"
+            src={blueVisualSecond}
+            alt=""
+            initialPosition={{ bottom: "-80px", left: "141px" }}
+            animatePosition={{ bottom: "40px", left: "141px" }}
+            tabletInitialPosition={{ bottom: "-80px", left: "82px" }}
+            tabletAnimatePosition={{ bottom: "40px", left: "82px" }}
+            mobileInitialPosition={{ bottom: "-80px", left: "-10px" }}
+            mobileAnimatePosition={{ bottom: "65px", left: "-10px" }}
+          />
         </li>
       </ul>
     </section>

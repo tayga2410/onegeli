@@ -16,15 +16,15 @@ export default function Footer() {
         </p>
         <div className="footer__socials">
           <a href="https://www.facebook.com/profile.php?id=100016356660375" target="_blank">
-            <img className="footer__socials-logo" src={facebookLogo} alt="" />
+            <img className="footer__socials-logo" src={facebookLogo} alt="иконка фейсбука" />
           </a>
-          <a href="https://www.instagram.com/onegeli.kz/" target="_blank"> <img className="footer__socials-logo" src={instagramLogo} alt="" /></a>
+          <a href="https://www.instagram.com/onegeli.kz/" target="_blank"> <img className="footer__socials-logo" src={instagramLogo} alt="иконка инстаграмма" /></a>
         </div>
       </div>
       <ul className="footer__list">
-        <h3 className="footer__list-header">{t("Менторство")}</h3>
-        <li className="footer__list-item">{t("Услуги")}</li>
-        <li className="footer__list-item">{t("Тест для родителей")}</li>
+        <li className="footer__list-header">{t("Менторство")}</li>
+        <li className="footer__list-item"><a className="footer__link" href="#services">{t("Услуги")}</a></li>
+        <li className="footer__list-item"><Link className="footer__link" to="/test">{t("Тест для родителей")}</Link></li>
         <li className="footer__list-item">{t("Пресса о нас")}</li>
       </ul>
       <ul className="footer__list">
@@ -38,7 +38,7 @@ export default function Footer() {
           </Link>
         </li>
         <li className="footer__list-item">
-          <Link className="footer__link" to="/hire">{t("Условия найма")}
+          <Link className="footer__link" to="/hire#hire-order">{t("Условия найма")}
           </Link>
         </li>
       </ul>

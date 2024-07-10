@@ -10,8 +10,11 @@ import ellipseMobile from "../../assets/test/test-hero-ellipse-mobile.png";
 import starsDesktop from '../../assets/test/test-hero-stars-image-desktop.png'
 import starsTablet from '../../assets/test/test-hero-stars-image-tablet.png'
 import starsMobile from '../../assets/test/test-hero-stars-image-mobile.png'
+import { useTranslation } from "react-i18next";
 
 export default function HireHero() {
+  const { t } = useTranslation();
+
   const form = useRef();
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [isFormError, setIsFormError] = useState(false);
@@ -50,9 +53,8 @@ export default function HireHero() {
   return (
     <section className="hire-hero hero">
       <div className="hire-hero__wrapper">
-      <h2 className="hire-hero__header hero__header">Присоединитесь к семье Онегели</h2>
-      <p className="hire-hero__description hero__description">
-        Оставьте свои контакты для дальнейшей связи с HR
+      <h2 className="hire-hero__header hero__header">{t("Присоединитесь к семье Онегели")}</h2>
+      <p className="hire-hero__description hero__description">{t("Оставьте свои контакты для дальнейшей связи с HR")}
       </p>
       <form
         className="hire-hero__form hero__form"
@@ -64,37 +66,35 @@ export default function HireHero() {
         <input
           className="hire-hero__input hero__input"
           type="text"
-          placeholder="Ваше Имя"
+          placeholder={t("Ваше Имя")} 
           name="user_name"
         />
         <input
           className="hire-hero__input hero__input"
           type="tel"
-          placeholder="Ваш номер телефона"
+          placeholder={t("Ваш номер телефона")}
           name="user_phone"
         />
         <input
           className="hire-hero__input hero__input"
           type="text"
-          placeholder="Ваш email"
+          placeholder={t("Ваша электронная почта")} 
           name="user_email"
         />
         <button
           className="hero__form-button hero__button form__button"
           type="submit"
           value="Send"
-        >
-          Отправить заявку
+        >{t("Отправить заявку")}
+          
         </button>
       </form>
       {isFormSubmitted && (
-        <p className="hero__form-message">
-          Спасибо, Ваши контактные данные отправлены!
+        <p className="hero__form-message">{t("Спасибо, Ваши контактные данные отправлены!")}
         </p>
       )}
       {isFormError && (
-        <p className="hero__form-message-error">
-          Пожалуйста, заполните все поля!
+        <p className="hero__form-message-error">{t("Пожалуйста, заполните все поля!")}
         </p>
       )}
       <picture>

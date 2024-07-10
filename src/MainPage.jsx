@@ -21,7 +21,6 @@ function MainPage() {
     <Advantages />
     <Promo />
     <Services />
-    <Reviews />
     <Faq />
    </div>
   )

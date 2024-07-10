@@ -3,6 +3,9 @@ import { useState, useRef } from "react";
 import desktopHero from "../../assets/hero/hero-image-desktop.png";
 import tabletHero from "../../assets/hero/hero-image-tablet.png";
 import mobileHero from "../../assets/hero/hero-image-mobile.png";
+import desktopStars from "../../assets/hero/hero-stars-desktop.png";
+import tabletStars from "../../assets/hero/hero-stars-tablet.png";
+import mobileStars from "../../assets/hero/hero-stars-mobile.png";
 import ellipse from "../../assets/hero/hero-ellipse.svg";
 import ellipseMobile from "../../assets/hero/hero-ellipse-mobile.svg";
 import mainLogoLightBlue from '../../assets/hero/logo-main-light-blue.png'
@@ -11,8 +14,13 @@ import emailjs from "@emailjs/browser";
 import { useNavigate } from "react-router-dom";
 import { usePopup } from "./PopupContext";
 import { useTranslation } from "react-i18next";
+import FadeIn from "../utils/FadeIn";
+import RotateImage from "../utils/RotateImage";
+import AnimatedImage from "../utils/AnimatedImage";
 
 export default function Hero() {
+  const containerRef = useRef();
+
   const { t } = useTranslation();
   const navigate = useNavigate();
 
@@ -59,7 +67,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="hero" id="hero">
+    <section className="hero" id="hero" ref={containerRef}>
       <div className="hero__text-wrapper">
       <img className="hero__logo" src={mainLogoLightBlue} alt="" />
         <h2 className="hero__header">
@@ -78,7 +86,7 @@ export default function Hero() {
             {t("Бронь консультации")}
           </button>
           <HeroPopup show={showPopup} handleClose={togglePopup}>
-            <h2 className="hero__form-header">Запись на консультацию</h2>
+            <h2 className="hero__form-header">{t("Запись на консультацию")}</h2>
             <form
               className="hero__form"
               ref={form}
@@ -89,25 +97,25 @@ export default function Hero() {
               <input
                 className="hero__input"
                 type="text"
-                placeholder="Ваше Имя"
+                placeholder={t("Ваше Имя")} 
                 name="user_name"
               />
               <input
                 className="hero__input"
                 type="tel"
-                placeholder="Ваш номер телефона"
+                placeholder={t("Ваш номер телефона")} 
                 name="user_phone"
               />
               <input
                 className="hero__input"
                 type="text"
-                placeholder="Возраст ребенка"
+                placeholder={t("Возраст ребенка")} 
                 name="user_age"
               />
               <textarea
                 className="hero__input hero__input--textarea"
                 type="text"
-                placeholder="Ваши пожелания"
+                placeholder={t("Ваши пожелания")} 
                 name="user_text"
               />
               <div className="hero__button-group hero__form-button-group">
@@ -115,44 +123,55 @@ export default function Hero() {
                   className="hero__form-button hero__button form__button"
                   type="submit"
                   value="Send"
-                >
-                  Отправить заявку
+                >{t("Отправить заявку")}
+                  
                 </button>
                 <button
                   className="hero__form-button hero__cancel-button"
                   onClick={togglePopup}
-                >
-                  Отмена
+                >{t("Отмена")}
+                  
                 </button>
               </div>
             </form>
             {isFormSubmitted && (
-              <p className="hero__form-message">
-                Спасибо, Ваши пожелания отправлены!
+              <p className="hero__form-message">{t("Спасибо, Ваши пожелания отправлены!")}
               </p>
             )}
             {isFormError && (
-              <p className="hero__form-message-error">
-                Пожалуйста, заполните все поля!
+              <p className="hero__form-message-error">{t("Пожалуйста, заполните все поля!")}
               </p>
             )}
           </HeroPopup>
+          <FadeIn delay={0.7}>
           <button
             className="hero__test-button hero__button"
             onClick={handleButtonClick}
           >{t("Тест для родителей")}
            
           </button>
+          </FadeIn>
         </div>
       </div>
       <picture>
+        <source srcSet={mobileStars} media="(max-width: 767px)" />
+        <source srcSet={tabletStars} media="(max-width: 1439px)" />
+        <RotateImage className="hero__stars" src={desktopStars} alt="разнообразные звезды." />
+      </picture>
+      <picture>
         <source srcSet={mobileHero} media="(max-width: 767px)" />
         <source srcSet={tabletHero} media="(max-width: 1439px)" />
-        <img className="hero__main-image" src={desktopHero} alt="" />
+        <AnimatedImage
+        src={desktopHero}
+        alt="Девушка с ребенком читают книгу"
+        className="hero__main-image"
+        initialPosition={{ bottom: '-80px', right: '-40px' }}
+        animatePosition={{ bottom: '0', right: '0' }}
+      />
       </picture>
       <picture>
         <source srcSet={ellipseMobile} media="(max-width: 767px)" />
-        <img className="hero__decor-image" src={ellipse} alt="" />
+        <img className="hero__ellipse" src={ellipse} alt="эллипс" />
       </picture>
       
     </section>

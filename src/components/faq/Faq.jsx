@@ -9,6 +9,7 @@ const AccordionItem = ({ question, answer, isOpen, onClick }) => {
   
 
   const contentRef = useRef(null);
+  const wrapperRef = useRef(null);
   const [height, setHeight] = useState(0);
 
   useEffect(() => {
@@ -17,12 +18,23 @@ const AccordionItem = ({ question, answer, isOpen, onClick }) => {
 
   const { t } = useTranslation();
 
+  const handleKeyDown = (event) => {
+    event.preventDefault();
+    if (event.key === ' ' || event.key === 'Enter') {
+      onClick();
+    }
+  };
+
+  const handleClick = () => {
+    onClick(); 
+    wrapperRef.current.focus(); 
+  };
 
   return (
     <div className="faq__accordion-item">
-      <div className="faq__accordion-question-wrapper" onClick={onClick}>
+      <div className="faq__accordion-question-wrapper"  ref={wrapperRef} onClick={handleClick} role="button" tabIndex={0}  onKeyDown={handleKeyDown}>
         <img src={isOpen ? minusIcon : plusIcon} alt={isOpen ? 'Minus' : 'Plus'} />
-        <span className="faq__question">{t(question)}</span>
+        <span className="faq__question" >{t(question)}</span>
       </div>
       <div
         ref={contentRef}

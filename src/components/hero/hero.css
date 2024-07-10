@@ -2,6 +2,7 @@
   background-color: #e0f2f9;
   min-height: 726px;
   position: relative;
+  overflow: hidden;
 }
 
 .hero__text-wrapper {
@@ -98,7 +99,13 @@
   z-index: 2;
 }
 
-.hero__decor-image {
+.hero__stars {
+  position: absolute;
+  right: 52px;
+  bottom: 0;
+}
+
+.hero__ellipse {
   position: absolute;
   width: 100%;
   right: 0;
@@ -183,7 +190,7 @@
 
 @media (max-width: 1439px) {
   .hero {
-    min-height: 546px;
+    min-height: 768px;
   }
 
   .hero__text-wrapper {
@@ -195,7 +202,7 @@
     max-width: 505px;
   }
 
-  .hero__decor-image {
+  .hero__ellipse {
     max-height: 114px;
   }
 }
@@ -253,11 +260,10 @@
     z-index: 2;
   }
 
-  .hero__decor-image {
-    max-height: 181px;
+  .hero__ellipse {
+    max-height: unset;
     left: 0;
-    bottom: -50px;
-    display: none;
+    width: 100%
   }
 
   .hero__logo {

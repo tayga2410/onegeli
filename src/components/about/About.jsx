@@ -7,7 +7,7 @@ export default function About() {
   return (
     <section className="about" id="about">
       <div className="about__wrapper">
-        <iframe
+        <iframe tabIndex={0}
          className="about__iframe"
           src="https://www.youtube.com/embed/jHFtK_H80M0?si=K3p-ZMifTxmc5ZbB"
           title="YouTube video player"

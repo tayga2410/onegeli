@@ -1,6 +1,8 @@
+import translations from '../../locales/translations.json'
+
 const questions = [
     {
-        number: "Вопрос 1/8",
+        number: "1/8",
       question: "Какая из следующих привычек наиболее важна для предотвращения синдрома внезапной детской смерти (СВДС)?",
       answers: [
         { text: "A: Укладывать ребенка спать на спине", isCorrect: true },
@@ -10,7 +12,7 @@ const questions = [
       ],
     },
     {
-        number: "Вопрос 2/8",
+        number: "2/8",
       question: "Какое количество сна требуется детям в возрасте от 1 до 2 лет для нормального развития?",
       answers: [
         { text: "A: 8-10 часов в сутки", isCorrect: false },
@@ -20,7 +22,7 @@ const questions = [
       ],
     },
     {
-        number: "Вопрос 3/8",
+        number: "3/8",
       question: "Какой из следующих продуктов следует избегать при введении прикорма детям до года?",
       answers: [
         { text: "A: Йогурт", isCorrect: false },
@@ -30,7 +32,7 @@ const questions = [
       ],
     },
     {
-        number: "Вопрос 4/8",
+        number: "4/8",
       question: "Какое из следующих утверждений о развитии речи у детей в возрасте до 4 лет является наиболее точным?",
       answers: [
         { text: "A: Дети должны начать говорить полными предложениями к 2 годам", isCorrect: false },
@@ -40,7 +42,7 @@ const questions = [
       ],
     },
     {
-        number: "Вопрос 5/8",
+        number: "5/8",
       question: "Что из следующего наиболее способствует развитию моторных навыков у детей?",
       answers: [
         { text: "A: Просмотр образовательных видео", isCorrect: false },
@@ -50,7 +52,7 @@ const questions = [
       ],
     },
     {
-        number: "Вопрос 6/8",
+        number: "6/8",
         question: "Какой из следующих симптомов может указывать на серьезную проблему со здоровьем у младенца?",
       answers: [
         { text: "A: Легкий насморк", isCorrect: false },
@@ -60,7 +62,7 @@ const questions = [
       ],
     },
     {
-        number: "Вопрос 7/8",
+        number: "7/8",
       question: "Как часто следует чистить зубы ребенку, начиная с появления первого зуба?",
       answers: [
         { text: "A: Раз в день перед сном", isCorrect: false },
@@ -70,7 +72,7 @@ const questions = [
       ],
     },
     {
-        number: "Вопрос 8/8",
+        number: "8/8",
       question: "Какие из следующих мероприятий наиболее эффективны для предотвращения пищевой аллергии у детей?",
       answers: [
         { text: "A: Избегание всех потенциально аллергенных продуктов до 3 лет", isCorrect: false },
@@ -80,5 +82,22 @@ const questions = [
       ],
     },
   ];
-  
-  export default questions;
+
+  function translateText(text) {
+    return translations[text] || text;
+}
+
+function translateData(questions) {
+    return questions.map(question => ({
+        number: translateText(question.number),
+        question: translateText(question.question),
+        answers: question.answers.map(answer => ({
+            text: translateText(answer.text),
+            isCorrect: answer.isCorrect
+        }))
+    }));
+}
+
+const translatedData = translateData(questions);
+
+export default translatedData;

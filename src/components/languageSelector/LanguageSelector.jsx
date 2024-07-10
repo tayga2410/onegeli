@@ -14,6 +14,7 @@ function LanguageSelector({ closeMenu }) {
   return (
     <div className="language-selector__container">
       <div className="language-selector__wrapper">
+        <label>
         <select
           className="language-selector__select"
           value={i18n.language}
@@ -23,6 +24,7 @@ function LanguageSelector({ closeMenu }) {
           <option value="en">EN</option>
           <option value="kz">KZ</option>
         </select>
+        </label>
       </div>
     </div>
   );

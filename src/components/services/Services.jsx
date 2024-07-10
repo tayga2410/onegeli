@@ -3,9 +3,17 @@ import checkbox from "../../assets/services/services-checkbox.svg";
 import { useState } from "react";
 import { usePopup } from "../hero/PopupContext";
 import { useTranslation } from "react-i18next";
+import { useOnScreen } from "../utils/useOnScreen";
+import { useRef } from "react";
+import { useSequenceAnimation } from "../utils/useSequenceAnimation";
+import AnimatedListItem from "../utils/AnimatedListItem";
 
 export default function Services() {
   const { t } = useTranslation();
+
+  const containerRef = useRef();
+  const isVisible = useOnScreen(containerRef);
+  const triggerIndex = useSequenceAnimation(isVisible);
 
   const [openIndex, setOpenIndex] = useState(null);
 
@@ -18,8 +26,10 @@ export default function Services() {
   return (
     <section className="services" id="services">
       <h2 className="services__header">{t("Наши услуги")}</h2>
-      <ul className="services__list">
-        <li
+      <ul className="services__list" ref={containerRef}>
+        <AnimatedListItem
+          index={0}
+          triggerIndex={triggerIndex}
           className={`services__item ${
             openIndex === 0 ? "services__item--opened" : ""
           }`}
@@ -140,9 +150,11 @@ export default function Services() {
               </div>
             )}
           </div>
-        </li>
+        </AnimatedListItem>
 
-        <li
+        <AnimatedListItem
+          index={1}
+          triggerIndex={triggerIndex}
           className={`services__item ${
             openIndex === 1 ? "services__item--opened" : ""
           }`}
@@ -183,7 +195,9 @@ export default function Services() {
                         src={checkbox}
                         alt=""
                       />
-                      {t("Уход и наблюдение за детьми в возрасте от 1 до 3 лет")}
+                      {t(
+                        "Уход и наблюдение за детьми в возрасте от 1 до 3 лет"
+                      )}
                     </li>
                     <li className="services__sub-item">
                       <img
@@ -209,7 +223,9 @@ export default function Services() {
                         src={checkbox}
                         alt=""
                       />
-                      {t("Поддержка в формировании привычек гигиены и самообслуживания")}
+                      {t(
+                        "Поддержка в формировании привычек гигиены и самообслуживания"
+                      )}
                     </li>
                     <li className="services__sub-item">
                       <img
@@ -236,7 +252,9 @@ export default function Services() {
                         src={checkbox}
                         alt=""
                       />
-                      {t("Специалисты с медицинским и педагогическим образованием")}
+                      {t(
+                        "Специалисты с медицинским и педагогическим образованием"
+                      )}
                     </li>
                     <li className="services__sub-item">
                       <img
@@ -277,9 +295,11 @@ export default function Services() {
               </div>
             )}
           </div>
-        </li>
+        </AnimatedListItem>
 
-        <li
+        <AnimatedListItem
+          index={2}
+          triggerIndex={triggerIndex}
           className={`services__item ${
             openIndex === 2 ? "services__item--opened" : ""
           }`}
@@ -322,7 +342,9 @@ export default function Services() {
                         src={checkbox}
                         alt=""
                       />
-                      {t("Полный уход и наблюдение за детьми в возрасте от 3 до 5 лет")}
+                      {t(
+                        "Полный уход и наблюдение за детьми в возрасте от 3 до 5 лет"
+                      )}
                     </li>
                     <li className="services__sub-item">
                       <img
@@ -330,7 +352,9 @@ export default function Services() {
                         src={checkbox}
                         alt=""
                       />
-                      {t("Индивидуальные образовательные программы, подготовка к детскому саду и школе")}
+                      {t(
+                        "Индивидуальные образовательные программы, подготовка к детскому саду и школе"
+                      )}
                     </li>
                     <li className="services__sub-item">
                       <img
@@ -356,7 +380,9 @@ export default function Services() {
                         src={checkbox}
                         alt=""
                       />
-                      {t("Медицинское наблюдение, консультирование по питанию и здоровью")}
+                      {t(
+                        "Медицинское наблюдение, консультирование по питанию и здоровью"
+                      )}
                     </li>
                     <li className="services__sub-item">
                       <img
@@ -377,7 +403,9 @@ export default function Services() {
                         src={checkbox}
                         alt=""
                       />
-                      {t("Специалисты с медицинским и педагогическим образованием")}
+                      {t(
+                        "Специалисты с медицинским и педагогическим образованием"
+                      )}
                     </li>
                     <li className="services__sub-item">
                       <img
@@ -393,9 +421,7 @@ export default function Services() {
                         src={checkbox}
                         alt=""
                       />
-                      {t(
-                        "Постоянная обратная связь и поддержка для родителей"
-                      )}
+                      {t("Постоянная обратная связь и поддержка для родителей")}
                     </li>
                   </ul>
                 </div>
@@ -418,7 +444,7 @@ export default function Services() {
               </div>
             )}
           </div>
-        </li>
+        </AnimatedListItem>
       </ul>
     </section>
   );

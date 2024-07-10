@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import questions from "./questions";
+import translatedData from "./questions.js";
 import "./quizPage.css";
 import "./../test/heroTest.css";
 import badResult from "../../assets/test/test-poor-result.png";
@@ -7,8 +7,11 @@ import averageResult from "../../assets/test/test-average-result.png";
 import goodResult from "../../assets/test/test-good-result.png";
 import { useNavigate } from "react-router-dom";
 import HeroPopup from "../hero/HeroPopup";
+import { useTranslation } from "react-i18next";
 
 const QuizPage = () => {
+  const { t } = useTranslation();
+
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [score, setScore] = useState(0);
@@ -19,7 +22,7 @@ const QuizPage = () => {
       setScore(score + 1);
     }
     const nextQuestion = currentQuestion + 1;
-    if (nextQuestion < questions.length) {
+    if (nextQuestion < translatedData.length) {
       setCurrentQuestion(nextQuestion);
       setSelectedAnswer(null);
     } else {
@@ -28,12 +31,46 @@ const QuizPage = () => {
   };
 
   const getResultMessage = (score) => {
-    const percentage = Math.floor((score / questions.length) * 100);
+    const percentage = Math.floor((score / translatedData.length) * 100);
     return `${percentage}%`;
   };
 
+  const getResultText = (score) => {
+    const percentage = (score / translatedData.length) * 100;
+    if (percentage < 50) {
+      return {
+        text1: t(
+          "Ваши результаты показывают, что вы нуждаетесь в значительном улучшении знаний по уходу и развитию детей раннего возраста."
+        ),
+        text2: t(
+          "Запишитесь на консультацию с нашими специалистами, чтобы лучше понимать потребности вашего ребенка и обеспечивать ему оптимальные условия для роста и развития."
+        ),
+      };
+    } else if (percentage < 85) {
+      return {
+        text1: t(
+          "Ваши результаты показывают, что у вас есть базовые знания по уходу и развитию детей раннего возраста, но есть еще много аспектов, которые требуют внимания и усовершенствования."
+        ),
+        text2: t(
+          "Свяжитесь с нашими специалистами, чтобы обсудить, как вы можете улучшить свои знания и навыки."
+        ),
+      };
+    } else {
+      return {
+        text1: t(
+          "Отличная работа! Ваши знания по уходу и развитию детей раннего возраста на высоком уровне."
+        ),
+        text2: t(
+          "Продолжайте в том же духе и не забывайте делиться своими знаниями с другими родителями."
+        ),
+      };
+    }
+  };
+
+  const resultText = getResultText(score);
+
   const getResultImage = (score) => {
-    const percentage = (score / questions.length) * 100;
+    const percentage = (score / translatedData.length) * 100;
     if (percentage < 50) {
       return badResult;
     } else if (percentage < 85) {
@@ -95,7 +132,7 @@ const QuizPage = () => {
     <div className="quiz-page">
       {showResult ? (
         <div className="result">
-          <h2 className="result-header">Ваш результат</h2>
+          <h2 className="result-header">{t("Ваш результат")}</h2>
           <div className="result-container">
             <picture>
               <img
@@ -107,28 +144,21 @@ const QuizPage = () => {
             <p className="result-percentage">{getResultMessage(score)}</p>
           </div>
           <div className="result-text-container">
-            <p className="result-description">
-              Ваши результаты показывают, что вы нуждаетесь в значительном
-              улучшении знаний по уходу и развитию детей раннего возраста.
-            </p>
-            <p className="result-description">
-              Запишитесь на консультацию с нашими специалистами, чтобы лучше
-              понимать потребности вашего ребенка и обеспечивать ему оптимальные
-              условия для роста и развития.
-            </p>
+            <p className="result-description">{resultText.text1}</p>
+            <p className="result-description">{resultText.text2}</p>
           </div>
           <div className="test-hero__button-group">
             <button
               className="test-hero__test-start-button hero__button"
               onClick={togglePopup}
             >
-              Записаться на разбор
+              {t("Записаться на разбор")}
             </button>
             <button
               className="test-hero__test-cancel-button hero__test-button hero__button"
               onClick={handleMainPageButtonClick}
             >
-              На главную страницу
+              {t("На главную страницу")}
             </button>
           </div>
           <HeroPopup show={showPopup} handleClose={togglePopup}>
@@ -195,11 +225,13 @@ const QuizPage = () => {
       ) : (
         <div className="question">
           <span className="quiz-count">
-            {questions[currentQuestion].number}
+            {t("Вопрос ")} {translatedData[currentQuestion].number}
           </span>
-          <h2 className="quiz-header">{questions[currentQuestion].question}</h2>
+          <h2 className="quiz-header">
+            {t(translatedData[currentQuestion].question)}
+          </h2>
           <div className="answers">
-            {questions[currentQuestion].answers.map((answer, index) => (
+            {translatedData[currentQuestion].answers.map((answer, index) => (
               <button
                 key={index}
                 className={`answer ${
@@ -207,7 +239,7 @@ const QuizPage = () => {
                 }`}
                 onClick={() => handleAnswerClick(answer.isCorrect)}
               >
-                {answer.text}
+                {t(answer.text)}
               </button>
             ))}
           </div>
