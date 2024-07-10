@@ -4,7 +4,7 @@ import { ViteImageOptimizer } from 'vite-plugin-image-optimizer'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "/onegeli/",
+  base: './',
   plugins: [react(),  ViteImageOptimizer({
     png: {
       // https://sharp.pixelplumbing.com/api-output#png
