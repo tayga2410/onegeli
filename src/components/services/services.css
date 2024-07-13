@@ -1,20 +1,20 @@
 .services {
   background-color: #e0f2f9;
+  padding-top: 80px;
 }
 
 .services__list {
-  padding: 40px 601px;
+  padding: 40px 400px;
   display: flex;
   gap: 20px;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-
 }
 
 .services__header {
   font-family: Ubuntu;
-  font-size: 26px;
+  font-size: 24px;
   font-weight: 700;
   line-height: 31.2px;
   text-align: center;
@@ -26,7 +26,7 @@
   padding: 20px;
   display: flex;
   flex-direction: column;
-  width: 676px;
+  width: 100%;
   gap: 20px;
   max-height: 300px;
   border: 1px solid #384d6214;
@@ -80,7 +80,7 @@
 
 .services__details {
   max-height: 0;
-  transition: height 2s ease, opacity 2s ease;
+  transition: height 0.5s ease, opacity 0.5s ease;
   opacity: 0;
 }
 
@@ -109,7 +109,7 @@
   box-shadow: 0px -4px 12px 0px #b1c6ee14 inset;
   border-radius: 8px;
   padding: 20px;
-  max-width: 278px;
+  width: 50%;
 }
 
 .services__sub-item {
@@ -131,10 +131,12 @@
 .services__button-group {
   display: flex;
   gap: 20px;
+  justify-content: space-between;
+
 }
 
 .services__button {
-  width: 530px;
+  width: 100%;
   min-height: 56px;
   font-size: 20px;
   font-weight: 700;
@@ -145,6 +147,10 @@
   background-color: #2573ff;
   color: #ffffff;
   cursor: pointer;
+}
+
+.services__button--details {
+  width: 530px;
 }
 
 .services__button:hover {
@@ -171,41 +177,75 @@
 
 @media (max-width: 1919px) {
   .services__list {
-    padding: 40px 160px;
+    padding: 40px 140px;
     display: flex;
     gap: 20px;
     align-items: center;
   }
 
-  .services__sub-list {
-    max-width: 281px;
+  .services__description {
+    font-size: 18px;
+    line-height: 32px;
   }
+  
+
 }
 
 @media (max-width: 1439px) {
   .services__list {
     flex-direction: column;
-    padding: 40px 60px;
-  }
-
-  .services__item {
-    justify-content: center;
-    width: 605px;
+    padding: 40px 80px;
   }
 
   .services__description {
     min-height: 44px;
   }
 
+
+}
+
+@media (max-width: 1020px) {
+  .services {
+    padding-top: 40px;
+  }
+
+  .services__button {
+    width: 300px;
+  }
 }
 
 @media (max-width: 767px) {
+  .services__header {
+    font-size: 22px;
+  }
+
+  .services__title {
+    font-size: 20px;
+  }
+
   .services__list {
     padding: 0 16px 40px 16px;
   }
 
+  .services__description {
+    font-size: 16px;
+  }
+
   .services__item {
     max-height: unset;
+    width: 300px;
+  }
+
+  .services__price-tag {
+    font-size: 18px;
+  }
+
+  .services__info {
+    font-size: 18px;
+  }
+
+  .services__button {
+    font-size: 18px;
     width: 300px;
   }
 
@@ -214,8 +254,16 @@
     gap: 12px;
   }
 
+  .services__sub-item {
+    font-size: 16px;
+  }
+
   .services__list-wrapper {
     flex-direction: column;
+  }
+
+  .services__sub-description {
+    font-size: 16px;
   }
 
   .services__button-group {
@@ -226,7 +274,7 @@
     text-align: left;
   }
 
-  .services__button {
-    width: 300px;
+  .services__sub-list {
+    width: unset;
   }
 }

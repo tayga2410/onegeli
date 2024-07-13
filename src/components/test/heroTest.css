@@ -1,13 +1,13 @@
 .test-hero {
   background-color: #e0f2f9;
-  min-height: 697px;
+  min-height: 726px;
   position: relative;
 }
 
 .test-hero__text-wrapper {
   max-width: 550px;
   margin: 0 auto;
-  padding: 68px 0 188px;
+  padding: 170px 0 188px;
   text-align: center;
 }
 
@@ -107,6 +107,22 @@
   border: 2px solid #d73300;
 }
 
+@media (max-width: 1919px) {
+  
+  .test-hero__description {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 32px;
+  }
+}
+
+@media (max-width: 1439px) {
+  .test-hero {
+    min-height: 787px;
+  }
+
+  
+}
 
 @media (max-width: 1020px) {
   .test-hero__image {
@@ -120,8 +136,12 @@
 @media (max-width: 767px) {
 
   .test-hero__text-wrapper {
-    padding: 40px 12px 354px;
+    padding: 120px 12px 354px;
     text-align: center;
+  }
+
+  .test-hero__description {
+    font-size: 16px;
   }
   .test-hero__image {
     left: unset;

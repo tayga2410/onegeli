@@ -22,8 +22,8 @@ import greenEllipseLeftSemitablet from "../../assets/advantages/advantages-ellip
 import greenEllipseLeftMobile from "../../assets/advantages/advantages-ellipse-green-left-mobile.png";
 import medalDesktop from "../../assets/advantages/advantages-medal-desktop.png";
 import medalTablet from "../../assets/advantages/advantages-medal-tablet.png";
-import certificateWide from "../../assets/advantages/advantages-certificate-desktop.png";
-import certificateTablet from "../../assets/advantages/advantages-certificate-tablet.png";
+import certificateWide from "../../assets/advantages/advantages-certificate-wide.png";
+import certificateDesktop from "../../assets/advantages/advantages-certificate-desktop.png";
 import certificateMobile from "../../assets/advantages/advantages-certificate-mobile.png";
 import childDesktop from "../../assets/advantages/advantages-child-image-desktop.png";
 import childTablet from "../../assets/advantages/advantages-child-image-tablet.png";
@@ -146,13 +146,19 @@ export default function Advantages() {
           </picture>
           <picture>
             <source srcSet={certificateMobile} media="(max-width: 767px)" />
-            <source srcSet={certificateTablet} media="(max-width: 1919px)" />
+            <source srcSet={certificateDesktop} media="(max-width: 1919px)" />
             <AnimatedImage
               className="advantages__certificate"
               src={certificateWide}
               alt=""
-              initialPosition={{ bottom: "-80px", right: "-100px" }}
-              animatePosition={{ bottom: "0", right: "0" }}
+              initialPosition={{ bottom: "-100px", right: "-47px" }}
+              animatePosition={{ bottom: "-67px", right: "27px" }}
+              desktopInitialPosition={{ bottom: "-100px", right: "-88px" }}
+              desktopAnimatePosition={{ bottom: "-67px", right: "-51px" }}
+              semiTabletInitialPosition={{ bottom: "-100px", right: "-88px" }}
+              semiTabletAnimatePosition={{ bottom: "-24px", right: "-64px" }}
+              mobileInitialPosition={{ bottom: "-100px", right: "-88px" }}
+              mobileAnimatePosition={{ bottom: "9px", right: "-17px" }}
             />
           </picture>
         </li>

@@ -1,7 +1,7 @@
 .language-selector__container {
   position: relative;
   display: inline-block;
-  z-index: 21;
+  z-index: 1;
 }
 
 .language-selector__wrapper {
@@ -16,8 +16,8 @@
   font-size: 16px;
   cursor: pointer;
   background-color: transparent;
-  color: #51555B;
-  border: 1.6px solid #F0F0F0;
+  color: #51555b;
+  border: 1.6px solid #f0f0f0;
   border-radius: 8px;
   appearance: none;
   -webkit-appearance: none;
@@ -25,14 +25,14 @@
 }
 
 .language-selector__wrapper::after {
-  content: 'v'; 
+  content: "v";
   position: absolute;
-  right: 10px; 
+  right: 10px;
   top: 50%;
   transform: translateY(-50%);
   pointer-events: none;
-  color:  #51555B;
-  font-size: 12px; 
+  color: #51555b;
+  font-size: 12px;
 }
 
 .language-selector__select::-ms-expand {

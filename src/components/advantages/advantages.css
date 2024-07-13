@@ -21,7 +21,7 @@
 
 .advantages__header {
   font-family: Ubuntu;
-  font-size: 26px;
+  font-size: 24px;
   font-weight: 700;
   line-height: 31.2px;
   margin: 0 0 20px;
@@ -125,9 +125,8 @@
 
 .advantages__certificate {
   position: absolute;
-  right: 0;
-  bottom: 0;
   z-index: 2;
+  transform: rotate(-10deg);
 }
 
 .advantages__child-image {
@@ -188,6 +187,11 @@
     width: 275px;
   }
 
+  .advantages__description {
+    font-size: 18px;
+    line-height: 32px;
+  }
+
   .advantages__item--green,
   .advantages__item--blue {
     padding-bottom: 161px;
@@ -235,7 +239,7 @@
 @media (max-width: 1019px) {
   .advantages__item {
     padding: 40px 160px 197px;
-}
+  }
   .advantages__sub-item--stretched {
     width: unset;
   }
@@ -299,7 +303,7 @@
   }
 
   .advantages__description {
-    font-size: 20px;
+    font-size: 16px;
   }
 
   .advantages__sub-list {
@@ -307,13 +311,12 @@
   }
 
   .advantages__sub-item {
-    width: 93%;
     flex-direction: row;
   }
 
   .advantages__title {
     max-width: unset;
-    font-size: 18px;
+    font-size: 16px;
     text-align: left;
   }
 

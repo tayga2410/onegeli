@@ -13,7 +13,7 @@ import Faq from './components/faq/Faq'
 function MainPage() {
 
   return (
-   <div className='container'>
+   <div>
     <Hero />
     <About />
     <Values />

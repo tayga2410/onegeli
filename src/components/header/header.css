@@ -4,23 +4,38 @@
   justify-content: space-between;
   padding: 0 400px;
   border-bottom: 1px solid #c2d1d9;
+  max-height: 90px;
+}
+
+.header.hidden {
+  top: -100px;
+}
+
+.header.visible {
+  top: 0;
 }
 
 @media (max-width: 1919px) {
   .header {
-    padding: 0 160px;
+    padding: 0 120px;
+    border-bottom: none;
   }
 }
 
 @media (max-width: 1439px) {
   .header {
-    padding: 0 60px;
     border-bottom: none;
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1220px) {
   .header {
-    padding: 0 16px;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    transition: top 0.3s;
+    background-color: #ffffff;
+    padding: 0;
+    width: 100%;
   }
 }

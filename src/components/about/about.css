@@ -6,21 +6,21 @@
   align-items: center;
   position: relative;
   z-index: 3;
+  padding: 0 400px 40px;
+  justify-content: center;
 }
 
 .about__wrapper {
   background-color: white;
   display: flex;
-  margin: 0 auto;
   gap: 20px;
-  max-width: 1120px;
   padding: 20px;
   border-radius: 20px;
 }
 
 .about__iframe {
   width: 400px;
-  height: 177px;
+  height: 200px;
   margin: 0;
   flex-shrink: 0;
   border-radius: 8px;
@@ -38,28 +38,35 @@
   line-height: 28.8px;
   margin: 0 0 12px;
   color: #242533;
-
 }
 
 .about__description {
   font-size: 20px;
   font-weight: 600;
-  line-height: 24px;
+  line-height: 32px;
 }
 
 @media (max-width: 1919px) {
+  .about {
+    padding: 0 120px 40px;
+  }
 
+  .about__description {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 32px;
+  }
 }
 
 @media (max-width: 1439px) {
-  .about__text-wrapper {
-    max-width: 440px;
+  .about {
+    padding: 0 60px 40px;
   }
 
   .about__iframe {
-    height: 278px;
+    height: unset;
+    min-height: 200px;
   }
-  
 }
 
 @media (max-width: 1019px) {
@@ -82,10 +89,13 @@
 }
 
 @media (max-width: 767px) {
+  .about {
+    padding: 0 0 40px;
+  }
   .about__wrapper {
     display: flex;
     flex-direction: column;
-    max-width: 332px;
+    max-width: 326px;
     padding: 20px 16px;
   }
 
@@ -96,15 +106,17 @@
 
   .about__header {
     order: 1;
+    font-size: 22px;
   }
 
   .about__iframe {
     order: 2;
-    width: 326px;
+    width: 324px;
     height: 200px;
   }
 
   .about__description {
     order: 3;
+    font-size: 16px;
   }
 }

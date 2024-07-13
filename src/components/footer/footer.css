@@ -120,4 +120,14 @@
   .footer {
     padding: 16px 40px;
   }
+
+  .footer__text-group-description {
+    font-size: 16px;
+  }
+
+  .footer__list-header,
+.footer__list-item {
+  font-size: 16px;
+}
+  
 }

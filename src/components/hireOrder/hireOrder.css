@@ -5,7 +5,7 @@
 
 .hire-order__header {
   font-family: Ubuntu;
-  font-size: 26px;
+  font-size: 24px;
   font-weight: 700;
   line-height: 31.2px;
   text-align: center;
@@ -120,7 +120,7 @@
   }
 
   .hire-order__item--first-item {
-    border-radius: 20px 2px 0 0;
+    border-radius: 20px 20px 0 0;
     padding-top: 40px;
   }
 
@@ -150,5 +150,17 @@
 
   .hire-order__polygon {
     bottom: -15px;
+  }
+
+  .hire-order__header {
+    font-size: 22px;
+  }
+
+  .hire-order__item-title {
+    font-size: 22px;
+  }
+
+  .hire-order__item-description {
+    font-size: 18px;
   }
 }

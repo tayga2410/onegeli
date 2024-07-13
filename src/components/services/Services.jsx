@@ -48,7 +48,7 @@ export default function Services() {
           </p>
           {openIndex !== 0 && (
             <button
-              className="services__button"
+              className="services__button services__button--details"
               onClick={() => handleToggleDetails(0)}
             >
               {t("Подробнее")}
@@ -173,7 +173,7 @@ export default function Services() {
           </p>
           {openIndex !== 1 && (
             <button
-              className="services__button"
+              className="services__button services__button--details"
               onClick={() => handleToggleDetails(1)}
             >
               {t("Подробнее")}
@@ -320,7 +320,7 @@ export default function Services() {
           </p>
           {openIndex !== 2 && (
             <button
-              className="services__button"
+              className="services__button services__button--details"
               onClick={() => handleToggleDetails(2)}
             >
               {t("Подробнее")}

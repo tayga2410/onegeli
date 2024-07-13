@@ -114,13 +114,13 @@
 
 @media (max-width: 1439px) {
   .quiz-page {
-    padding: 40px 60px;
+    padding: 120px 60px;
   }
 }
 
 
 @media (max-width: 767px) {
   .quiz-page {
-    padding: 40px 12px;
+    padding: 100px 12px;
   }
 }

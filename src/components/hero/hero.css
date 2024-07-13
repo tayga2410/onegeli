@@ -22,7 +22,7 @@
 
 .hero__form-header {
   font-family: Ubuntu, sans-serif;
-  font-size: 26px;
+  font-size: 24px;
   font-weight: 700;
   line-height: 31.2px;
   text-align: left;
@@ -73,10 +73,12 @@
 }
 
 .hero__test-button {
+  min-width: 240px;
   max-width: 248px;
   background-color: transparent;
   color: #ff5723;
   border: 2px solid #ff5723;
+  justify-content: center;
 }
 
 .hero__test-button:hover {
@@ -116,15 +118,15 @@
 .hero__form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 12px;
 }
 
 .hero__input,
 .hero__input--textarea {
   font-family: Mulish, sans-serif;
   max-width: 560px;
-  height: 52px;
-  padding: 4px 4px 4px 20px;
+  height: 40px;
+  padding: 12px;
   border-radius: 20px;
   border: 1px solid #8f9bb352;
   font-size: 20px;
@@ -135,7 +137,7 @@
 
 .hero__input--textarea {
   min-height: 122px;
-  margin: 0 0 40px;
+  margin: 0 0 20px;
 }
 
 .hero__input::placeholder,
@@ -144,6 +146,7 @@
   font-weight: 500;
   line-height: 24px;
   color: #8f9bb3;
+  padding: 0;
 }
 
 .hero__cancel-button {
@@ -181,8 +184,14 @@
 @media (max-width: 1919px) {
   .hero__text-wrapper {
     max-width: 600px;
-    padding: 143px 160px 0;
+    padding: 143px 120px 0;
   }
+
+  .hero__description {
+    font-size: 18px;
+    line-height: 32px;
+  }
+
   .hero__main-image {
     right: 0;
   }
@@ -190,12 +199,12 @@
 
 @media (max-width: 1439px) {
   .hero {
-    min-height: 768px;
+    min-height: 546px;
   }
 
   .hero__text-wrapper {
     max-width: 593px;
-    padding: 40px 60px 0;
+    padding: 93px 60px 0;
   }
 
   .hero__header {
@@ -207,16 +216,28 @@
   }
 }
 
+@media (max-width: 1220px) {
+  .hero {
+    min-height: 617px;
+  }
+  .hero__text-wrapper {
+    padding: 112px 60px 0;
+  }
+}
+
 @media (max-width: 1019px) {
   .hero__logo {
     display: block;
     margin: 0 0 28px;
   }
+  .hero {
+    min-height: 777px;
+  }
 }
 
 @media (max-width: 767px) {
   .hero {
-    min-height: 853px;
+    min-height: 950px;
     display: flex;
     justify-content: center;
   }
@@ -233,23 +254,46 @@
     gap: 12px;
   }
 
+  .hero__test-button {
+    min-width: 256px;
+    max-width: 256px;
+    background-color: transparent;
+    color: #ff5723;
+    border: 2px solid #ff5723;
+    justify-content: center;
+  }
+
+  .hero__input {
+    font-size: 16px;
+    height: 26px;
+  }
+
+  .hero__input::placeholder {
+    font-size: 18px;
+    height: 26px;
+  }
+
+  .hero__form-header {
+    font-size: 26px;
+  }
+
   .hero__form-button-group {
     max-width: unset;
   }
 
   .hero__text-wrapper {
-    padding: 19px 12px 0;
+    padding: 114px 12px 0;
   }
 
   .hero__header {
-    font-size: 26px;
+    font-size: 24px;
     line-height: 31.2px;
     text-align: center;
+    margin: 0 auto 20px;
   }
 
   .hero__description {
-    font-size: 20px;
-    line-height: 24px;
+    font-size: 18px;
     text-align: center;
   }
 
@@ -263,7 +307,7 @@
   .hero__ellipse {
     max-height: unset;
     left: 0;
-    width: 100%
+    width: 100%;
   }
 
   .hero__logo {

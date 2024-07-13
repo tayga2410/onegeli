@@ -1,6 +1,6 @@
 .contacts {
   display: flex;
-  gap: 32px;
+  gap: 16px;
   align-items: center;
 }
 
@@ -11,7 +11,7 @@
 
 .contacts__header {
   margin: 0;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
   line-height: 21.6px;
   color: #001524;
@@ -19,7 +19,7 @@
 }
 
 .contacts__phone {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 800;
   line-height: 21.6px;
   color: #3689DB;
@@ -29,10 +29,20 @@
 .contacts__socials {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 8px;
+}
+
+@media (max-width: 1220px) {
+  .contacts {
+    padding-right: 60px;
+  }
 }
 
 @media (max-width: 767px) {
+  .contacts {
+    padding-right: 16px;
+  }
+
     .contacts__group {
         display: none;
     }

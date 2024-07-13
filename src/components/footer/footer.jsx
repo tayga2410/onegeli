@@ -45,7 +45,7 @@ export default function Footer() {
       <ul className="footer__list">
         <li className="footer__list-item">{t("Контакты")}</li>
         <li className="footer__list-item">
-          <a className="footer__link" href="tel:+77780990422">
+          <a className="footer__link" href="https://wa.me/77780990422?text=Здравствуйте,%20хочу%20получить%20консультацию!">
             +77780990422
           </a>
         </li>

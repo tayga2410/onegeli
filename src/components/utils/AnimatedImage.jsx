@@ -5,12 +5,15 @@ import useWindowSize from './UseWindowResize';
 
 const AnimatedImage = ({ 
   src, 
+  desktopSrc,
   tabletSrc,
   semiTabletSrc, 
   mobileSrc,
   alt, 
   initialPosition, 
   animatePosition, 
+  desktopInitialPosition,
+  desktopAnimatePosition,
   tabletInitialPosition, 
   tabletAnimatePosition, 
   semiTabletInitialPosition, 
@@ -20,12 +23,18 @@ const AnimatedImage = ({
   className 
 }) => {
   const ref = React.useRef();
-  const isIntersecting = useOnScreen(ref);
+  const hasAnimated = useOnScreen(ref);
   const windowSize = useWindowSize(); 
 
   let currentInitialPosition = initialPosition;
   let currentAnimatePosition = animatePosition;
   let currentSrc = src;
+
+  if (windowSize.width <= 1919) {
+    currentInitialPosition = desktopInitialPosition || initialPosition;
+    currentAnimatePosition =  desktopAnimatePosition || animatePosition;
+    currentSrc =  desktopSrc || src;
+  }
 
   if (windowSize.width <= 1439) {
     currentInitialPosition = tabletInitialPosition || initialPosition;
@@ -53,7 +62,7 @@ const AnimatedImage = ({
       src={currentSrc}
       alt={alt}
       initial={currentInitialPosition}
-      animate={isIntersecting ? currentAnimatePosition : currentInitialPosition}
+      animate={hasAnimated ? currentAnimatePosition : currentInitialPosition}
       transition={{ duration: 0.5 }}
     />
   );

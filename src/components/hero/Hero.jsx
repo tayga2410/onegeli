@@ -75,7 +75,7 @@ export default function Hero() {
         </h2>
         <p className="hero__description">
           {t(
-            "Обучаем и предоставляем проверенных специалистов по уходу за детьми."
+            "Единственная компания в Казахстане, где каждая няня проходит строгий отбор и обучение"
           )}
         </p>
         <div className="hero__button-group">

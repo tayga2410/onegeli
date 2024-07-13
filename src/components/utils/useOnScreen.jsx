@@ -2,11 +2,17 @@ import { useEffect, useState } from 'react';
 
 export const useOnScreen = (ref) => {
   const [isIntersecting, setIsIntersecting] = useState(false);
+  const [hasAnimated, setHasAnimated] = useState(false); 
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setIsIntersecting(entry.isIntersecting);
+        if (entry.isIntersecting) {
+          setIsIntersecting(true);
+          setHasAnimated(true); 
+        } else {
+          setIsIntersecting(false);
+        }
       },
       { threshold: 0.2 }
     );
@@ -22,5 +28,5 @@ export const useOnScreen = (ref) => {
     };
   }, [ref]);
 
-  return isIntersecting;
+  return hasAnimated;
 };
