@@ -1,4 +1,8 @@
-# React + Vite
+# Onegeli.kz — Коммерческий проект
 
-This project was built by React + Vite configuration.
-Used tech: Emailjs, framerMotion, ReactRouter, ReactI18next,
+Веб-сайт агентства по подбору нянь.
+
+- Деплой на продакшн (PS.KZ): декабрь 2023
+- Перезалив репозитория на GitHub: 2024 (упрощённый showcase)
+- Технологии: React, Framer Motion, CSS Modules
+- Полный цикл разработки: проектирование, разработка, деплой.
